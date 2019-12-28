@@ -249,7 +249,7 @@ class Nuwu(commands.Cog):
     async def lick(self, ctx, *, arg1):
         fauth = ctx.message.author.id
         auth = f'<@!{fauth}>'
-        mem = ctx.message.arg1
+        mem = arg1
         msg = rand(self.lickm)
         #Variables
         print(fauth, mem, auth)
