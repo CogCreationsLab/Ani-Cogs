@@ -248,6 +248,7 @@ class Nuwu(commands.Cog, IDConverter):
         #Variables
         if argument == auth:
             await ctx.send('I-im not a mirror -3-')
+            return False
         if argument != auth:
             pass
         if match is None:
