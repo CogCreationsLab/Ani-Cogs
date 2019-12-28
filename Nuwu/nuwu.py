@@ -301,9 +301,9 @@ class Nuwu(commands.Cog, IDConverter):
             await ctx.send(f'{member} is not in the server, please use the correct syntax | [p]lick <member>')
             return False
         if guild:
-            smilebed = discord.Embed(description=msg.format(mem=member, auth=auth), color=discord.Color(rand(self.clist)))
-            smilebed.set_image(url=rand(self.pokeg))
-            await ctx.send(embed=smilebed)
+            pokebed = discord.Embed(description=msg.format(mem=member, auth=auth), color=discord.Color(rand(self.clist)))
+            pokebed.set_image(url=rand(self.pokeg))
+            await ctx.send(embed=pokebed)
         #Message Sending
 
     @commands.command()
@@ -324,9 +324,9 @@ class Nuwu(commands.Cog, IDConverter):
             await ctx.send(f'{member} is not in the server, please use the correct syntax | [p]lick <member>')
             return False
         if guild:
-            smilebed = discord.Embed(description=msg.format(mem=member, auth=auth), color=discord.Color(rand(self.clist)))
-            smilebed.set_image(url=rand(self.lickg))
-            await ctx.send(embed=smilebed)
+            lickbed = discord.Embed(description=msg.format(mem=member, auth=auth), color=discord.Color(rand(self.clist)))
+            lickbed.set_image(url=rand(self.lickg))
+            await ctx.send(embed=lickbed)
 
     @commands.command()
     async def kill(self, ctx, member):
@@ -346,9 +346,9 @@ class Nuwu(commands.Cog, IDConverter):
             await ctx.send(f'{member} is not in the server, please use the correct syntax | [p]lick <member>')
             return False
         if guild:
-            smilebed = discord.Embed(description=msg.format(mem=member, auth=auth), color=discord.Color(rand(self.clist)))
-            smilebed.set_image(url=rand(self.killg))
-            await ctx.send(embed=smilebed)
+            killbed = discord.Embed(description=msg.format(mem=member, auth=auth), color=discord.Color(rand(self.clist)))
+            killbed.set_image(url=rand(self.killg))
+            await ctx.send(embed=killbed)
 #Class
 ###################
 #Finished Commands#
