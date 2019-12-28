@@ -249,13 +249,13 @@ class Nuwu(commands.Cog):
     async def lick(self, ctx, *, arg1):
         fauth = ctx.message.author.id
         auth = f'<@!{fauth}>'
-        fmem = ctx.message.content.split(' ')[1]
-        mem = fmem.id
+        mem = ctx.message.arg1
         msg = rand(self.lickm)
         #Variables
-        if mem in(ctx.guild.members.id):
-            await ctx.send(f'{mem} is not in the server, please use the correct syntax | [p]lick <member>')
-        elif mem == auth:
+
+        #if mem in(ctx.guild.members):
+        #    await ctx.send(f'{mem} is not in the server, please use the correct syntax | [p]lick <member>')
+        if mem == auth:
             await ctx.send('H-how do you lick yourself 0-0...')
         elif mem != auth:
             smilebed = discord.Embed(description=msg.format(mem=mem, auth=auth), color=discord.Color(rand(self.clist)))
