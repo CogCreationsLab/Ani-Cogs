@@ -266,14 +266,15 @@ class Nuwu(commands.Cog, IDConverter):
         guild = ctx.guild
         msg = rand(self.lickm)
         #Variables
+
         if argument == auth:
             await ctx.send('H-how do you lick yourself 0-0...')
-            break
+            return False
         if argument != auth:
             pass
         if match is None:
             await ctx.send(f'{argument} is not in the server, please use the correct syntax | [p]lick <member>')
-            break
+            return False
         if guild:
             result = guild.get_member_named(argument)
             print(result,match)
