@@ -284,41 +284,26 @@ class Nuwu(commands.Cog, IDConverter):
             await ctx.send(embed=smilebed)
         #Message Sending
 
-    if member == auth:
-        await ctx.send('Hey! D-dont poke yourself 😤')
-        return False
-    if member != auth:
-        pass
-    if match is None:
-        await ctx.send(f'{member} is not in the server, please use the correct syntax | [p]lick <member>')
-        return False
-    if guild:
-        pokebed = discord.Embed(description=msg.format(mem=member, auth=auth), color=discord.Color(rand(self.clist)))
-        pokebed.set_image(url=rand(self.pokeg))
-        await ctx.send(embed=pokebed)
-    #Message Sending
-
-@commands.command()
-async def lick(self, ctx, member):
-    fauth = ctx.message.author.id
-    auth = f'<@!{fauth}>'
-    match = self._get_id_match(member) or re.match(r'<@!?([0-9]+)>$', member)
-    guild = ctx.guild
-    msg = rand(self.lickm)
-    #Variables
-
-    if member == auth:
-        await ctx.send('H-how do you lick yourself 0-0...')
-        return False
-    if member != auth:
-        pass
-    if match is None:
-        await ctx.send(f'{member} is not in the server, please use the correct syntax | [p]lick <member>')
-        return False
-    if guild:
-        lickbed = discord.Embed(description=msg.format(mem=member, auth=auth), color=discord.Color(rand(self.clist)))
-        lickbed.set_image(url=rand(self.lickg))
-        await ctx.send(embed=lickbed)
+    @commands.command()
+    async def poke(self, ctx, member):
+        fauth = ctx.message.author.id
+        auth = f'<@!{fauth}>'
+        match = self._get_id_match(member) or re.match(r'<@!?([0-9]+)>$', member)
+        guild = ctx.guild
+        msg = rand(self.pokem)
+        #Variables
+        if member == auth:
+            await ctx.send('Hey! D-dont poke yourself 😤')
+            return False
+        if member != auth:
+            pass
+        if match is None:
+            await ctx.send(f'{member} is not in the server, please use the correct syntax | [p]lick <member>')
+            return False
+        if guild:
+            pokebed = discord.Embed(description=msg.format(mem=member, auth=auth), color=discord.Color(rand(self.clist)))
+            pokebed.set_image(url=rand(self.pokeg))
+            await ctx.send(embed=pokebed)
         #Message Sending
 
     @commands.command()
@@ -344,7 +329,7 @@ async def lick(self, ctx, member):
             await ctx.send(embed=lickbed)
 
     @commands.command()
-    async def kill(self, ctx, member):
+    async def lick(self, ctx, member):
         fauth = ctx.message.author.id
         auth = f'<@!{fauth}>'
         match = self._get_id_match(member) or re.match(r'<@!?([0-9]+)>$', member)
@@ -362,7 +347,7 @@ async def lick(self, ctx, member):
             return False
         if guild:
             killbed = discord.Embed(description=msg.format(mem=member, auth=auth), color=discord.Color(rand(self.clist)))
-            killbed.set_image(url=rand(self.killg))
+            killbed.set_image(url=rand(self.lickg))
             await ctx.send(embed=killbed)
 #Class
 ###################
