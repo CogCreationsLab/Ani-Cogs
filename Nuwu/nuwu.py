@@ -135,7 +135,7 @@ class Nuwu(commands.Cog):
 
     @commands.command()
     async def pat(self, ctx):
-        fauth = ctx.author.id
+        fauth = ctx.message.author.id
         auth = f'<@!{fauth}>'
         mem = ctx.message.content.split(' ')[1]
         msg = rand(self.patm)
@@ -150,7 +150,7 @@ class Nuwu(commands.Cog):
 
     @commands.command()
     async def kiss(self, ctx):
-        fauth = ctx.author.id
+        fauth = ctx.message.author.id
         auth = f'<@!{fauth}>'
         mem = ctx.message.content.split(' ')[1]
         msg = rand(self.kissm)
@@ -165,7 +165,7 @@ class Nuwu(commands.Cog):
 
     @commands.command()
     async def smile(self, ctx):
-        fauth = ctx.author.id
+        fauth = ctx.message.author.id
         auth = f'<@!{fauth}>'
         mem = ctx.message.content.split(' ')[1]
         msg = rand(self.smilem)
@@ -181,7 +181,7 @@ class Nuwu(commands.Cog):
 
     @commands.command()
     async def poke(self, ctx):
-        fauth = ctx.author.id
+        fauth = ctx.message.author.id
         auth = f'<@!{fauth}>'
         mem = ctx.message.content.split(' ')[1]
         msg = rand(self.pokem)
@@ -197,3 +197,15 @@ class Nuwu(commands.Cog):
 
 
 #Class
+
+
+#################
+#Commands To Add#
+################
+# -
+# -
+# -
+# -
+# -
+# -
+# -
