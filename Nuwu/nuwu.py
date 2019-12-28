@@ -183,9 +183,8 @@ class Nuwu(commands.Cog):
         #Others
 
     @commands.command()
-    async def pat(self, ctx):
-        fauth = ctx.message.author.id
-        auth = f'<@!{fauth}>'
+    async def pat(self, ctx, *, arg1):
+        auth = f'<@!{arg1}>'
         mem = ctx.message.content.split(' ')[1]
         msg = rand(self.patm)
         #Variables
@@ -198,9 +197,8 @@ class Nuwu(commands.Cog):
         #Message Sending
 
     @commands.command()
-    async def kiss(self, ctx):
-        fauth = ctx.message.author.id
-        auth = f'<@!{fauth}>'
+    async def kiss(self, ctx, *, arg1):
+        auth = f'<@!{arg1}>'
         mem = ctx.message.content.split(' ')[1]
         msg = rand(self.kissm)
         #Variables
@@ -214,9 +212,8 @@ class Nuwu(commands.Cog):
         #Message Sending
 
     @commands.command()
-    async def smile(self, ctx):
-        fauth = ctx.message.author.id
-        auth = f'<@!{fauth}>'
+    async def smile(self, ctx, *, arg1):
+        auth = f'<@!{arg1}>'
         mem = ctx.message.content.split(' ')[1]
         msg = rand(self.smilem)
         #Variables
@@ -230,9 +227,8 @@ class Nuwu(commands.Cog):
         #Message Sending
 
     @commands.command()
-    async def poke(self, ctx):
-        fauth = ctx.message.author.id
-        auth = f'<@!{fauth}>'
+    async def poke(self, ctx, *, arg1):
+        auth = f'<@!{arg1}>'
         mem = ctx.message.content.split(' ')[1]
         msg = rand(self.pokem)
         #Variables
@@ -247,13 +243,13 @@ class Nuwu(commands.Cog):
 
     @commands.command()
     async def lick(self, ctx, *, arg1):
-        fauth = ctx.message.author.id
         auth = f'<@!{arg1}>'
         mem = ctx.message.content.split(' ')[1]
         msg = rand(self.lickm)
         #Variables
-
-        if mem == auth:
+        if auth not in ctx.guild.members:
+            print(auth)
+        elif mem == auth:
             await ctx.send('H-how do you lick yourself 0-0...')
         elif mem != auth:
             smilebed = discord.Embed(description=msg.format(mem=mem, auth=auth), color=discord.Color(rand(self.clist)))
