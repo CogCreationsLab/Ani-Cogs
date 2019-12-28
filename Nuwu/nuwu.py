@@ -195,7 +195,7 @@ class Nuwu(commands.Cog, IDConverter):
         #Others
 
     @commands.command()
-    async def pat(self, ctx, *, arg1):
+    async def pat(self, ctx, argument):
         fauth = ctx.message.author.id
         auth = f'<@!{fauth}>'
         match = self._get_id_match(argument) or re.match(r'<@!?([0-9]+)>$', argument)
@@ -216,7 +216,7 @@ class Nuwu(commands.Cog, IDConverter):
         #Message Sending
 
     @commands.command()
-    async def kiss(self, ctx, *, arg1):
+    async def kiss(self, ctx, argument):
         fauth = ctx.message.author.id
         auth = f'<@!{fauth}>'
         match = self._get_id_match(argument) or re.match(r'<@!?([0-9]+)>$', argument)
@@ -239,7 +239,7 @@ class Nuwu(commands.Cog, IDConverter):
         #Message Sending
 
     @commands.command()
-    async def smile(self, ctx, *, arg1):
+    async def smile(self, ctx, argument):
         fauth = ctx.message.author.id
         auth = f'<@!{fauth}>'
         match = self._get_id_match(argument) or re.match(r'<@!?([0-9]+)>$', argument)
@@ -260,7 +260,7 @@ class Nuwu(commands.Cog, IDConverter):
         #Message Sending
 
     @commands.command()
-    async def poke(self, ctx, *, arg1):
+    async def poke(self, ctx, argument):
         fauth = ctx.message.author.id
         auth = f'<@!{fauth}>'
         match = self._get_id_match(argument) or re.match(r'<@!?([0-9]+)>$', argument)
