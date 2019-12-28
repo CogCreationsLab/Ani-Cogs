@@ -252,7 +252,7 @@ class Nuwu(commands.Cog):
         mem = arg1
         msg = rand(self.lickm)
         #Variables
-        if mem not in ctx.guild.members:
+        if mem in ctx.guild.members:
             await ctx.send(f'{mem} is not in the server, please use the correct syntax | [p]lick <member>')
         elif mem == auth:
             await ctx.send('H-how do you lick yourself 0-0...')
