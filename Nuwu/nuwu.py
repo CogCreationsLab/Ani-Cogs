@@ -162,8 +162,20 @@ clist = [
 ]
 
 #Lists
+class Converter:
+    async def convert(self, ctx, argument):
+        raise NotImplementedError('Derived classes need to implement this.')
 
-class Nuwu(commands.Cog):
+class IDConverter(Converter):
+    def __init__(self):
+        self._id_regex = re.compile(r'([0-9]{15,21})$')
+        super().__init__()
+
+    def _get_id_match(self, argument):
+        return self._id_regex.match(argument)
+
+
+class Nuwu(commands.Cog, IDConverter):
     def __init__(self, bot):
         self.patg = patg
         self.kissg = kissg
