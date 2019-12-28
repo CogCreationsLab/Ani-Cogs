@@ -246,7 +246,7 @@ class Nuwu(commands.Cog):
         #Message Sending
 
     @commands.command()
-    async def lick(self, ctx, *, arg1):
+    async def lick(self, ctx, argument):
         fauth = ctx.message.author.id
         auth = f'<@!{fauth}>'
         match = self._get_id_match(argument) or re.match(r'<@!?([0-9]+)>$', argument)
