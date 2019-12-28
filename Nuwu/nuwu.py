@@ -78,7 +78,14 @@ smileg = [
   'http://cdn63.picsart.com/191956697002202.gif',
   'https://i.pinimg.com/originals/ef/c9/47/efc9470fad6963192c9273e0c975ffb5.gif',
   'https://i.kym-cdn.com/photos/images/newsfeed/001/139/889/b3a.gif',
-  'http://i.imgur.com/Y5o48VW.gif'
+  'https://i.pinimg.com/originals/f6/82/fd/f682fd97c3bcb5c6f4bb4e84218f3f82.gif',
+  'https://thumbs.gfycat.com/LeadingShortCanadagoose-size_restricted.gif',
+  'https://img.buzzfeed.com/buzzfeed-static/static/2015-08/24/13/enhanced/webdr14/anigif_original-26898-1440435930-6.gif',
+  'https://steamuserimages-a.akamaihd.net/ugc/89351200168033872/687AAA1ADC378839A3437E2EB1DCA201DF106EE1/',
+  'https://i.pinimg.com/originals/97/c7/2b/97c72b01531ec28db47f155d43f11e66.gif',
+  'http://i.imgur.com/Y5o48VW.gif',
+  'https://media3.giphy.com/media/GT6hcXiYvsnxm/source.gif',
+
 ]
 
 smilem = [
@@ -95,6 +102,16 @@ pokeg = [
   'https://gifimage.net/wp-content/uploads/2017/09/anime-poke-gif-9.gif',
   'https://media.giphy.com/media/vqRI8gmKvrTOM/giphy.gif',
   'https://thumbs.gfycat.com/ImprobableAdorableGardensnake-size_restricted.gif',
+  'https://i.imgur.com/Zi4ahyj.gif',
+  'https://ci.memecdn.com/262033.gif',
+  'https://4.bp.blogspot.com/-2jQvKwLGfMs/WPbrTtTEieI/AAAAAAAAzOA/KJsetp15cqs4nTuZGUoLmoTYeDHSsOMHgCPcB/s1600/Omake%2BGif%2BAnime%2B-%2BEromanga-sensei%2B-%2BEpisode%2B2%2B-%2BTomoe%2BPokes%2BMasamune%2527s%2BCheek.gif',
+  'https://i.gifer.com/S010.gif',
+  'https://1.bp.blogspot.com/-0cu-3g3bio4/Vx_hCIRUcYI/AAAAAAAAcE8/mcV22O8uolst5z3Rd-reMOPhxoLLMeXaACKgB/s1600/Omake%2BGif%2BAnime%2B-%2BKuma%2BMiko%2B-%2BEpisode%2B4%2B-%2BMachi%2BCheek%2BPoke.gif',
+  'https://media.tenor.com/images/0e20ef804a6ecdd9dcb8065e7390963f/tenor.gif',
+  'https://media.tenor.com/images/814ed3218c9899cdb79c3d9f5573495d/tenor.gif',
+  'https://pa1.narvii.com/6946/d5b18a40da583b359f2e953c1c7abe27f4c28b21r1-600-338_hq.gif',
+  'https://media1.tenor.com/images/ce3593d0d5052339cdae55ed0d75e7aa/tenor.gif?itemid=9966199',
+  'https://thumbs.gfycat.com/PlainHeartyGonolek-size_restricted.gif',
   'http://i.imgur.com/oyIXHxY.gif'
 ]
 
@@ -155,6 +172,7 @@ class Nuwu(commands.Cog):
         mem = ctx.message.content.split(' ')[1]
         msg = rand(self.kissm)
         #Variables
+
         if mem == auth:
             await ctx.send('Y-y-you c-cant kiss yourself ^0^!')
         elif mem != auth:
