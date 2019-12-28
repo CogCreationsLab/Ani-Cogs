@@ -249,7 +249,7 @@ class Nuwu(commands.Cog):
     async def lick(self, ctx, *, arg1):
         fauth = ctx.message.author.id
         auth = f'<@!{fauth}>'
-        mem = arg1
+        mem = arg1.id
         msg = rand(self.lickm)
         #Variables
         if mem.id in(ctx.guild.members.id):
