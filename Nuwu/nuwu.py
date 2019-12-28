@@ -140,7 +140,8 @@ lickg = [
   'https://media.tenor.com/images/ffb9602b95fe735fd757c183d25af18f/tenor.gif',
   'https://media.tenor.com/images/3185cbd38fbf5b2e337b9a9de317c66c/tenor.gif',
   'https://media.tenor.com/images/4daf1e8ec23c3869466d446439abf70b/tenor.gif',
-  'https://media1.tenor.com/images/8e16f796361326db09c5d81d18d91d28/tenor.gif?itemid=12630638'
+  'https://media1.tenor.com/images/8e16f796361326db09c5d81d18d91d28/tenor.gif?itemid=12630638',
+  'https://cdn.weeb.sh/images/Syg8gx0OP-.gif'
 ]
 
 lickm = [
@@ -150,6 +151,27 @@ lickm = [
 
 ]
 
+killg = [
+    'https://cdn.weeb.sh/images/B1VnoJFDZ.gif',
+    'https://media0.giphy.com/media/BFL20NiE18A2A/source.gif',
+    'https://i.kym-cdn.com/photos/images/newsfeed/001/160/891/6d2.gif',
+    'https://media1.tenor.com/images/87cf4e6c9d7d523d736f9e8fddc4e951/tenor.gif?itemid=5502476',
+    'https://giffiles.alphacoders.com/128/128132.gif',
+    'http://pa1.narvii.com/5906/17326e3d54fc8b090596dc10a5835fce1a26192c_00.gif',
+    'https://img-comment-fun.9cache.com/media/a9W4Qj/aR7wQzYd_700wa_0.gif',
+    'https://i.kym-cdn.com/photos/images/original/000/961/693/421.gif',
+    'https://media0.giphy.com/media/14igRO8Okm42rK/source.gif',
+    'https://cdn.weeb.sh/images/HyXTiyKw-.gif',
+    'https://66.media.tumblr.com/3c7c966dea8f11dee2c645a84180c33f/tumblr_pf7syag44Q1uhzwjbo1_400.gifv',
+    'https://i.gifer.com/N0Tq.gif',
+    'https://steamuserimages-a.akamaihd.net/ugc/942809797942516047/1DE56005A4B80A640E26405C56D925252289F00B/'
+]
+
+killm = [
+    '{auth} annihilated {member} Uhoh...',
+    '{member} got killed by {auth}!',
+    '{member} died by the hands of {auth} 00F!'
+]
 
 
 clist = [
@@ -182,6 +204,7 @@ class Nuwu(commands.Cog, IDConverter):
         self.smileg = smileg
         self.pokeg = pokeg
         self.lickg = lickg
+        self.killg = killg
         #Gifs
 
         self.patm = patm
@@ -189,6 +212,7 @@ class Nuwu(commands.Cog, IDConverter):
         self.smilem = smilem
         self.pokem = pokem
         self.lickm = lickm
+        self.killm = killm
         #Messages
 
         self.clist = clist
@@ -304,6 +328,27 @@ class Nuwu(commands.Cog, IDConverter):
             smilebed.set_image(url=rand(self.lickg))
             await ctx.send(embed=smilebed)
 
+    @commands.command()
+    async def kill(self, ctx, member):
+        fauth = ctx.message.author.id
+        auth = f'<@!{fauth}>'
+        match = self._get_id_match(member) or re.match(r'<@!?([0-9]+)>$', member)
+        guild = ctx.guild
+        msg = rand(self.killm)
+        #Variables
+
+        if member == auth:
+            await ctx.send('P-please d-d-dont commit suicide...')
+            return False
+        if member != auth:
+            pass
+        if match is None:
+            await ctx.send(f'{member} is not in the server, please use the correct syntax | [p]lick <member>')
+            return False
+        if guild:
+            smilebed = discord.Embed(description=msg.format(mem=member, auth=auth), color=discord.Color(rand(self.clist)))
+            smilebed.set_image(url=rand(self.killg))
+            await ctx.send(embed=smilebed)
 #Class
 ###################
 #Finished Commands#
@@ -313,6 +358,7 @@ class Nuwu(commands.Cog, IDConverter):
 # -Poke
 # -Kiss
 # -Lick
+# -Kill
 
 #################
 #Commands To Add#
