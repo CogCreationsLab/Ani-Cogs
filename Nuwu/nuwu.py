@@ -246,7 +246,7 @@ class Nuwu(commands.Cog):
         #Message Sending
 
     @commands.command()
-    async def Lick(self, ctx):
+    async def lick(self, ctx):
         fauth = ctx.message.author.id
         auth = f'<@!{fauth}>'
         mem = ctx.message.content.split(' ')[1]
