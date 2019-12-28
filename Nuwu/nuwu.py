@@ -71,7 +71,6 @@ smileg = [
   'https://media.giphy.com/media/ivibkKm68n3a/giphy.gif',
   'https://thumbs.gfycat.com/OblongAdoredGoshawk-size_restricted.gif',
   'https://media0.giphy.com/media/rFfmUWVMOyKVG/source.gif',
-  'https://media1.tenor.com/images/6c115f367d18498f4d4b8d561a8445a2/tenor.gif?itemid=11672437',
   'https://media.giphy.com/media/arzM4yh4TgeNW/giphy.gif',
   'https://thumbs.gfycat.com/SplendidBeautifulFieldspaniel-size_restricted.gif',
   'https://data.whicdn.com/images/320836413/original.gif',
@@ -122,6 +121,37 @@ pokem = [
   '{mem recieves a pokey pokey from {auth} =-=}'
 ]
 
+
+lickg = [
+  'https://media.giphy.com/media/x4P8TaYhGn4FW/giphy.gif',
+  'https://i.gifer.com/CAmE.gif',
+  'https://media.giphy.com/media/8GiREm7aqMwN2/200.gif',
+  'https://ci.memecdn.com/5938991.gif',
+  'https://68.media.tumblr.com/b80cda919b3309f2cb974635e429db57/tumblr_osuazevFcj1qcsnnso1_500.gif',
+  'https://i.kym-cdn.com/photos/images/newsfeed/000/996/752/fdf.gif',
+  'https://pa1.narvii.com/5748/477a68bdbb9eaa255263eb970fda433b7dc7a38b_hq.gif',
+  'https://media1.tenor.com/images/4626d4bbe60ef15212e3181f11d6704a/tenor.gif?itemid=13451633',
+  'https://66.media.tumblr.com/1074acf4d3e68a0a94ab7c9d5eea6e7f/tumblr_njxe8wuAup1snkggso1_500.gif',
+  'https://media1.tenor.com/images/b4b16656ced5859d917c889709592b5d/tenor.gif?itemid=4863352',
+  'https://i.kym-cdn.com/photos/images/original/001/093/355/909.gif',
+  'https://33.media.tumblr.com/799d48bdb36dcbe6ee5717630f74e504/tumblr_n0bxdsE4M11rb3ea0o1_500.gif',
+  'https://38.media.tumblr.com/b0dea211949e13cd9c221ac6c3461da6/tumblr_nlhtufSUA61qbb4ago1_500.gif',
+  'https://media.tenor.com/images/ffb9602b95fe735fd757c183d25af18f/tenor.gif',
+  'https://media.tenor.com/images/3185cbd38fbf5b2e337b9a9de317c66c/tenor.gif',
+  'https://media.tenor.com/images/4daf1e8ec23c3869466d446439abf70b/tenor.gif',
+  'https://media1.tenor.com/images/8e16f796361326db09c5d81d18d91d28/tenor.gif?itemid=12630638',
+  'https://media.tenor.com/images/46a0d241fddbbcc2f7c37a0e6cc66166/tenor.gif'
+]
+
+likem = [
+  'D-did {auth} j-just lick {mem}?!?',
+  '{auth} i-is licking {mem} 1.1!!',
+  '{mem} j-just got licked by {auth} 0-0...',
+
+]
+
+
+
 clist = [
     0xeb4034,
     0x75f6ff,
@@ -139,12 +169,14 @@ class Nuwu(commands.Cog):
         self.kissg = kissg
         self.smileg = smileg
         self.pokeg = pokeg
+        self.lickg = lickg
         #Gifs
 
         self.patm = patm
         self.kissm = kissm
         self.smilem = smilem
         self.pokem = pokem
+        self.lickm = lickm
         #Messages
 
         self.clist = clist
@@ -213,17 +245,43 @@ class Nuwu(commands.Cog):
             await ctx.send(embed=smilebed)
         #Message Sending
 
+    @commands.command()
+    async def Lick(self, ctx):
+        fauth = ctx.message.author.id
+        auth = f'<@!{fauth}>'
+        mem = ctx.message.content.split(' ')[1]
+        msg = rand(self.lickm)
+        #Variables
 
+        if mem == auth:
+            await ctx.send('H-how do you lick yourself 0-0...')
+        elif mem != auth:
+            smilebed = discord.Embed(description=msg.format(mem=mem, auth=auth), color=discord.Color(rand(self.clist)))
+            smilebed.set_image(url=rand(self.lickg))
+            await ctx.send(embed=smilebed)
+        #Message Sending
 #Class
 
 
 #################
 #Commands To Add#
 ################
-# -
-# -
-# -
-# -
-# -
-# -
-# -
+# -Happy
+# -Excited
+# -Cuddle
+# -Insult
+# -Nom
+# -Slap
+# -Stare
+# -Highfive
+# -Bite
+# -Greet
+# -Punch
+# -Handholding
+# -Tickle
+# -Kill
+# -Hold
+# -Wave
+# -Boop
+# -Snuggle
+# -Bully
