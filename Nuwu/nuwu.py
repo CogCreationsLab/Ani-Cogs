@@ -184,8 +184,9 @@ class Nuwu(commands.Cog):
 
     @commands.command()
     async def pat(self, ctx, *, arg1):
-        auth = f'<@!{arg1}>'
-        mem = ctx.message.content.split(' ')[1]
+        fauth = ctx.message.author.id
+        auth = f'<@!{fauth}>'
+        mem = arg1
         msg = rand(self.patm)
         #Variables
         if mem == auth:
@@ -198,8 +199,9 @@ class Nuwu(commands.Cog):
 
     @commands.command()
     async def kiss(self, ctx, *, arg1):
-        auth = f'<@!{arg1}>'
-        mem = ctx.message.content.split(' ')[1]
+        fauth = ctx.message.author.id
+        auth = f'<@!{fauth}>'
+        mem = arg1
         msg = rand(self.kissm)
         #Variables
 
@@ -213,8 +215,9 @@ class Nuwu(commands.Cog):
 
     @commands.command()
     async def smile(self, ctx, *, arg1):
-        auth = f'<@!{arg1}>'
-        mem = ctx.message.content.split(' ')[1]
+        fauth = ctx.message.author.id
+        auth = f'<@!{fauth}>'
+        mem = arg1
         msg = rand(self.smilem)
         #Variables
 
@@ -228,8 +231,9 @@ class Nuwu(commands.Cog):
 
     @commands.command()
     async def poke(self, ctx, *, arg1):
-        auth = f'<@!{arg1}>'
-        mem = ctx.message.content.split(' ')[1]
+        fauth = ctx.message.author.id
+        auth = f'<@!{fauth}>'
+        mem = arg1
         msg = rand(self.pokem)
         #Variables
 
@@ -243,11 +247,13 @@ class Nuwu(commands.Cog):
 
     @commands.command()
     async def lick(self, ctx, *, arg1):
-        mem = ctx.message.content.split(' ')[1]
+        fauth = ctx.message.author.id
+        auth = f'<@!{fauth}>'
+        mem = arg1
         msg = rand(self.lickm)
         #Variables
-        if arg1 not in ctx.guild.members:
-            print(arg1)
+        if mem not in ctx.guild.members):
+            await ctx.send(f'{mem} is not in the server, please use the correct syntax | [p]lick <member>')
         elif mem == auth:
             await ctx.send('H-how do you lick yourself 0-0...')
         elif mem != auth:
