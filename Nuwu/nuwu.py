@@ -253,7 +253,7 @@ class Nuwu(commands.Cog):
         msg = rand(self.lickm)
         #Variables
 
-        elif mem == auth:
+        if mem == auth:
             await ctx.send('H-how do you lick yourself 0-0...')
         elif mem != auth:
             smilebed = discord.Embed(description=msg.format(mem=mem, auth=auth), color=discord.Color(rand(self.clist)))
