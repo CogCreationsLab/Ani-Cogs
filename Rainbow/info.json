@@ -1,0 +1,9 @@
+{
+    "author" : ["1clapch33k5#8049 | WeebMaster "],
+    "install_msg" : "Thank you for installing my Rainbow Role Cog.",
+    "name" : "虹",
+    "short" : "Name a role <虹> and rainbow away!",
+    "description" : "Make a role change colors in a beautiful rainbowy gradient.",
+    "tags" : ["Rainbow", "Role", "RB", "Fun"],
+    "min_python_version": [3, 6, 0]
+}
