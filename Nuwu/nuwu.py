@@ -249,10 +249,11 @@ class Nuwu(commands.Cog):
     async def lick(self, ctx, *, arg1):
         fauth = ctx.message.author.id
         auth = f'<@!{fauth}>'
-        mem = arg1.id
+        fmem = ctx.message.content.split(' ')[1]
+        mem = fmem.id
         msg = rand(self.lickm)
         #Variables
-        if mem.id in(ctx.guild.members.id):
+        if mem in(ctx.guild.members.id):
             await ctx.send(f'{mem} is not in the server, please use the correct syntax | [p]lick <member>')
         elif mem == auth:
             await ctx.send('H-how do you lick yourself 0-0...')
