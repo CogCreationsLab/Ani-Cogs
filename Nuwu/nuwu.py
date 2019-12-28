@@ -246,14 +246,15 @@ class Nuwu(commands.Cog):
         #Message Sending
 
     @commands.command()
-    async def lick(self, ctx):
+    async def Lick(self, ctx):
         fauth = ctx.message.author.id
         auth = f'<@!{fauth}>'
         mem = ctx.message.content.split(' ')[1]
         msg = rand(self.lickm)
         #Variables
-
-        if mem == auth:
+        if mem in(server.members):
+            await ctx.send('lolno')
+        elif mem == auth:
             await ctx.send('H-how do you lick yourself 0-0...')
         elif mem != auth:
             smilebed = discord.Embed(description=msg.format(mem=mem, auth=auth), color=discord.Color(rand(self.clist)))
