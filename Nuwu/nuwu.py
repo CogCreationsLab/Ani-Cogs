@@ -347,7 +347,7 @@ class Nuwu(commands.Cog, IDConverter):
             return False
         if guild:
             killbed = discord.Embed(description=msg.format(mem=member, auth=auth), color=discord.Color(rand(self.clist)))
-            killbed.set_image(url=rand(self.lickg))
+            killbed.set_image(url=rand(self.killg))
             await ctx.send(embed=killbed)
 #Class
 ###################
