@@ -140,8 +140,7 @@ lickg = [
   'https://media.tenor.com/images/ffb9602b95fe735fd757c183d25af18f/tenor.gif',
   'https://media.tenor.com/images/3185cbd38fbf5b2e337b9a9de317c66c/tenor.gif',
   'https://media.tenor.com/images/4daf1e8ec23c3869466d446439abf70b/tenor.gif',
-  'https://media1.tenor.com/images/8e16f796361326db09c5d81d18d91d28/tenor.gif?itemid=12630638',
-  'https://media.tenor.com/images/46a0d241fddbbcc2f7c37a0e6cc66166/tenor.gif'
+  'https://media1.tenor.com/images/8e16f796361326db09c5d81d18d91d28/tenor.gif?itemid=12630638'
 ]
 
 lickm = [
@@ -199,12 +198,18 @@ class Nuwu(commands.Cog, IDConverter):
     async def pat(self, ctx, *, arg1):
         fauth = ctx.message.author.id
         auth = f'<@!{fauth}>'
-        mem = arg1
+        match = self._get_id_match(argument) or re.match(r'<@!?([0-9]+)>$', argument)
+        guild = ctx.guild
         msg = rand(self.patm)
         #Variables
-        if mem == auth:
+        if argument == auth:
             await ctx.send('A-are you feeling lonely? ;c')
-        elif mem != auth:
+        if argument != auth:
+            pass
+        if match is None:
+            await ctx.send(f'{argument} is not in the server, please use the correct syntax | [p]lick <member>')
+            return False
+        if guild:
             patbed = discord.Embed(description=msg.format(mem=mem, auth=auth), color=discord.Color(rand(self.clist)))
             patbed.set_image(url=rand(self.patg))
             await ctx.send(embed=patbed)
@@ -214,13 +219,20 @@ class Nuwu(commands.Cog, IDConverter):
     async def kiss(self, ctx, *, arg1):
         fauth = ctx.message.author.id
         auth = f'<@!{fauth}>'
-        mem = arg1
+        match = self._get_id_match(argument) or re.match(r'<@!?([0-9]+)>$', argument)
+        guild = ctx.guild
         msg = rand(self.kissm)
         #Variables
 
-        if mem == auth:
+        if argument == auth:
             await ctx.send('Y-y-you c-cant kiss yourself ^0^!')
-        elif mem != auth:
+            return False
+        if argument != auth:
+            pass
+        if match is None:
+            await ctx.send(f'{argument} is not in the server, please use the correct syntax | [p]lick <member>')
+            return False
+        if guild:
             kissbed = discord.Embed(description=msg.format(mem=mem, auth=auth), color=discord.Color(rand(self.clist)))
             kissbed.set_image(url=rand(self.kissg))
             await ctx.send(embed=kissbed)
@@ -230,13 +242,18 @@ class Nuwu(commands.Cog, IDConverter):
     async def smile(self, ctx, *, arg1):
         fauth = ctx.message.author.id
         auth = f'<@!{fauth}>'
-        mem = arg1
+        match = self._get_id_match(argument) or re.match(r'<@!?([0-9]+)>$', argument)
+        guild = ctx.guild
         msg = rand(self.smilem)
         #Variables
-
-        if mem == auth:
-            await ctx.send('W-well you can always smile in the mirror -3-')
-        elif mem != auth:
+        if argument == auth:
+            await ctx.send('I-im not a mirror -3-')
+        if argument != auth:
+            pass
+        if match is None:
+            await ctx.send(f'{argument} is not in the server, please use the correct syntax | [p]lick <member>')
+            return False
+        if guild:
             smilebed = discord.Embed(description=msg.format(mem=mem, auth=auth), color=discord.Color(rand(self.clist)))
             smilebed.set_image(url=rand(self.smileg))
             await ctx.send(embed=smilebed)
@@ -246,13 +263,19 @@ class Nuwu(commands.Cog, IDConverter):
     async def poke(self, ctx, *, arg1):
         fauth = ctx.message.author.id
         auth = f'<@!{fauth}>'
-        mem = arg1
+        match = self._get_id_match(argument) or re.match(r'<@!?([0-9]+)>$', argument)
+        guild = ctx.guild
         msg = rand(self.pokem)
         #Variables
-
-        if mem == auth:
-            await ctx.send('Hey! Y-you cant poke yourself 😤')
-        elif mem != auth:
+        if argument == auth:
+            await ctx.send('Hey! D-dont poke yourself 😤')
+            return False
+        if argument != auth:
+            pass
+        if match is None:
+            await ctx.send(f'{argument} is not in the server, please use the correct syntax | [p]lick <member>')
+            return False
+        if guild:
             smilebed = discord.Embed(description=msg.format(mem=mem, auth=auth), color=discord.Color(rand(self.clist)))
             smilebed.set_image(url=rand(self.pokeg))
             await ctx.send(embed=smilebed)
@@ -276,14 +299,19 @@ class Nuwu(commands.Cog, IDConverter):
             await ctx.send(f'{argument} is not in the server, please use the correct syntax | [p]lick <member>')
             return False
         if guild:
-            result = guild.get_member_named(argument)
-            print(result,match)
             smilebed = discord.Embed(description=msg.format(mem=argument, auth=auth), color=discord.Color(rand(self.clist)))
             smilebed.set_image(url=rand(self.lickg))
             await ctx.send(embed=smilebed)
 
 #Class
-
+###################
+#Finished Commands#
+###################
+# -Smile
+# -Pat
+# -Poke
+# -Kiss
+# -Lick
 
 #################
 #Commands To Add#
