@@ -143,7 +143,7 @@ lickg = [
   'https://media.tenor.com/images/46a0d241fddbbcc2f7c37a0e6cc66166/tenor.gif'
 ]
 
-likem = [
+lickm = [
   'D-did {auth} j-just lick {mem}?!?',
   '{auth} i-is licking {mem} 1.1!!',
   '{mem} j-just got licked by {auth} 0-0...',
