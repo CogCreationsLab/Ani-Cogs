@@ -210,7 +210,7 @@ class Nuwu(commands.Cog, IDConverter):
             await ctx.send(f'{argument} is not in the server, please use the correct syntax | [p]lick <member>')
             return False
         if guild:
-            patbed = discord.Embed(description=msg.format(mem=mem, auth=auth), color=discord.Color(rand(self.clist)))
+            patbed = discord.Embed(description=msg.format(mem=argument, auth=auth), color=discord.Color(rand(self.clist)))
             patbed.set_image(url=rand(self.patg))
             await ctx.send(embed=patbed)
         #Message Sending
@@ -233,7 +233,7 @@ class Nuwu(commands.Cog, IDConverter):
             await ctx.send(f'{argument} is not in the server, please use the correct syntax | [p]lick <member>')
             return False
         if guild:
-            kissbed = discord.Embed(description=msg.format(mem=mem, auth=auth), color=discord.Color(rand(self.clist)))
+            kissbed = discord.Embed(description=msg.format(mem=argument, auth=auth), color=discord.Color(rand(self.clist)))
             kissbed.set_image(url=rand(self.kissg))
             await ctx.send(embed=kissbed)
         #Message Sending
@@ -254,7 +254,7 @@ class Nuwu(commands.Cog, IDConverter):
             await ctx.send(f'{argument} is not in the server, please use the correct syntax | [p]lick <member>')
             return False
         if guild:
-            smilebed = discord.Embed(description=msg.format(mem=mem, auth=auth), color=discord.Color(rand(self.clist)))
+            smilebed = discord.Embed(description=msg.format(mem=argument, auth=auth), color=discord.Color(rand(self.clist)))
             smilebed.set_image(url=rand(self.smileg))
             await ctx.send(embed=smilebed)
         #Message Sending
@@ -276,7 +276,7 @@ class Nuwu(commands.Cog, IDConverter):
             await ctx.send(f'{argument} is not in the server, please use the correct syntax | [p]lick <member>')
             return False
         if guild:
-            smilebed = discord.Embed(description=msg.format(mem=mem, auth=auth), color=discord.Color(rand(self.clist)))
+            smilebed = discord.Embed(description=msg.format(mem=argument, auth=auth), color=discord.Color(rand(self.clist)))
             smilebed.set_image(url=rand(self.pokeg))
             await ctx.send(embed=smilebed)
         #Message Sending
