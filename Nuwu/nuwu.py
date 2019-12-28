@@ -6,6 +6,7 @@ from redbot.core import Config
 from redbot.core import commands
 #Redbot Framework
 
+import re
 import time
 from random import choice as rand
 #General Imports
