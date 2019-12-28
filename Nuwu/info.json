@@ -1,0 +1,9 @@
+{
+    "author" : ["1clapch33k5#8049 | WeebMaster "],
+    "install_msg" : "Thank you for installing my Nuwu Cog.",
+    "name" : "NUWU",
+    "short" : "Kiss, Pat, and Smile at other members!",
+    "description" : "Allows users to Kiss, Pat, and Smile at other members, using gifs.",
+    "tags" : ["Kiss", "Pat", "Smile", "Fun", "Anime", "Kawaii", "Gif", "Cog"],
+    "min_python_version": [3, 6, 0]
+}
