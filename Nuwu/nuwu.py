@@ -268,6 +268,7 @@ class Nuwu(commands.Cog, IDConverter):
         #Variables
         if argument == auth:
             await ctx.send('H-how do you lick yourself 0-0...')
+            break
         if argument != auth:
             pass
         if match is None:
