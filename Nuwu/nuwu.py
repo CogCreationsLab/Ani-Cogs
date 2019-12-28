@@ -169,8 +169,8 @@ killg = [
 
 killm = [
     '{auth} annihilated {member} Uhoh...',
-    '{member} got killed by {auth}!',
-    '{member} died by the hands of {auth} 00F!'
+    '{memb} got killed by {auth}!',
+    '{mem} died by the hands of {auth} 00F!'
 ]
 
 
