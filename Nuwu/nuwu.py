@@ -249,20 +249,22 @@ class Nuwu(commands.Cog):
     async def lick(self, ctx, *, arg1):
         fauth = ctx.message.author.id
         auth = f'<@!{fauth}>'
-        mem = arg1
+        match = self._get_id_match(argument) or re.match(r'<@!?([0-9]+)>$', argument)
+        guild = ctx.guild
         msg = rand(self.lickm)
         #Variables
-        print(fauth, mem, auth)
-        if mem not in(ctx.guild.members):
-            await ctx.send(f'{mem} is not in the server, please use the correct syntax | [p]lick <member>')
-            return True
-        if mem == auth:
-            await ctx.send('H-how do you lick yourself 0-0...')
-        elif mem != auth and mem not in(ctx.guild.members):
-            smilebed = discord.Embed(description=msg.format(mem=mem, auth=auth), color=discord.Color(rand(self.clist)))
-            smilebed.set_image(url=rand(self.lickg))
-            await ctx.send(embed=smilebed)
-        #Message Sending
+
+        if match is None:
+          await ctx.send(f'{mem} is not in the server, please use the correct syntax | [p]lick <member>')
+        if guild:
+          result = guild.get_member_named(argument)
+          print(result)
+        #if mem == auth:
+        #  await ctx.send('H-how do you lick yourself 0-0...')
+        #elif mem != auth and mem not in(ctx.guild.members):
+        #  smilebed = discord.Embed(description=msg.format(mem=mem, auth=auth), color=discord.Color(rand(self.clist)))
+         # smilebed.set_image(url=rand(self.lickg))
+          #await ctx.send(embed=smilebed)
 #Class
 
 
