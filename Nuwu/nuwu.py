@@ -336,7 +336,7 @@ class Nuwu(commands.Cog, IDConverter):
         guild = ctx.guild
         msg = rand(self.killm)
         #Variables
-
+        print(member)
         if member == auth:
             await ctx.send('P-please d-d-dont commit suicide...')
             return False
