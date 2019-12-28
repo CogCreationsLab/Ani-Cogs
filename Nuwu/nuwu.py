@@ -268,16 +268,16 @@ class Nuwu(commands.Cog, IDConverter):
         #Variables
 
         if match is None:
-          await ctx.send(f'{argument} is not in the server, please use the correct syntax | [p]lick <member>')
+            await ctx.send(f'{argument} is not in the server, please use the correct syntax | [p]lick <member>')
         if guild:
-          result = guild.get_member_named(argument)
-          print(result,match)
-        #if mem == auth:
-        #  await ctx.send('H-how do you lick yourself 0-0...')
-        #elif mem != auth and mem not in(ctx.guild.members):
-        #  smilebed = discord.Embed(description=msg.format(mem=mem, auth=auth), color=discord.Color(rand(self.clist)))
-         # smilebed.set_image(url=rand(self.lickg))
-          #await ctx.send(embed=smilebed)
+            result = guild.get_member_named(argument)
+            print(result,match)
+        if argument == auth:
+            await ctx.send('H-how do you lick yourself 0-0...')
+        elif mem != auth:
+            smilebed = discord.Embed(description=msg.format(mem=argument, auth=auth), color=discord.Color(rand(self.clist)))
+            smilebed.set_image(url=rand(self.lickg))
+            await ctx.send(embed=smilebed)
 #Class
 
 
