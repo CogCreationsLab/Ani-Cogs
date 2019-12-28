@@ -269,9 +269,10 @@ class Nuwu(commands.Cog, IDConverter):
         if argument == auth:
             await ctx.send('H-how do you lick yourself 0-0...')
         if argument != auth:
-            break
+            pass
         if match is None:
             await ctx.send(f'{argument} is not in the server, please use the correct syntax | [p]lick <member>')
+            break
         if guild:
             result = guild.get_member_named(argument)
             print(result,match)
