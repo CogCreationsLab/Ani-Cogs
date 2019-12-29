@@ -17,4 +17,6 @@ class P2G(commands.Cog):
             geocalc = geocoder.ip(f'{ipv4}')
             geo1 = geocalc.latlng[0]
             geo2 = geocalc.latlng[1]
-            await ctx.send(f':white_check_mark: SUCCESSFULY CALCULATED GEOLOCATION VALUE | {geo1}, {geo2} |')
+            mgmsg = f'{geo1}{geo2}'
+            geobed = discord.Embed(description=mgmsg,color=discord.Color(0xff4040))
+            await ctx.send(embed=geobed)
