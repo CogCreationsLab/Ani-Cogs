@@ -119,7 +119,7 @@ pokeg = [
 pokem = [
   '{auth} poked {mem} o0o!',
   '{mem} just got poked by {auth} -3-',
-  '{mem recieves a pokey pokey from {auth} =-=}'
+  '{mem recieves a pokey pokey from {auth} =-='
 ]
 
 
@@ -162,7 +162,6 @@ killg = [
     'https://i.kym-cdn.com/photos/images/original/000/961/693/421.gif',
     'https://media0.giphy.com/media/14igRO8Okm42rK/source.gif',
     'https://cdn.weeb.sh/images/HyXTiyKw-.gif',
-    'https://66.media.tumblr.com/3c7c966dea8f11dee2c645a84180c33f/tumblr_pf7syag44Q1uhzwjbo1_400.gifv',
     'https://i.gifer.com/N0Tq.gif',
     'https://media1.tenor.com/images/f16e5bcbac25180fa09b9d5c405b3f95/tenor.gif?itemid=14555236'
     'http://0.media.dorkly.cvcdn.com/62/49/6318f988198210c1abe5632f2ca102d1.gif',
@@ -231,6 +230,7 @@ class Nuwu(commands.Cog, IDConverter):
         #Variables
         if member == auth:
             await ctx.send('A-are you feeling lonely? ;c')
+            return False
         if member != auth:
             pass
         if match is None:
