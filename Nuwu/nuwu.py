@@ -162,7 +162,6 @@ killg = [
     'https://i.kym-cdn.com/photos/images/original/000/961/693/421.gif',
     'https://media0.giphy.com/media/14igRO8Okm42rK/source.gif',
     'https://cdn.weeb.sh/images/HyXTiyKw-.gif',
-    'https://66.media.tumblr.com/3c7c966dea8f11dee2c645a84180c33f/tumblr_pf7syag44Q1uhzwjbo1_400.gifv',
     'https://i.gifer.com/N0Tq.gif'
 ]
 
@@ -230,7 +229,7 @@ class Nuwu(commands.Cog, IDConverter):
         if member != auth:
             pass
         if match is None:
-            await ctx.send(f'{member} is not in the server, please use the correct syntax | [p]lick <member>')
+            await ctx.send(f':x: **{member}** is not in the server, please use the correct syntax | [p]pat <member>')
             return False
         if guild:
             patbed = discord.Embed(description=msg.format(mem=member, auth=auth), color=discord.Color(rand(self.clist)))
@@ -253,7 +252,7 @@ class Nuwu(commands.Cog, IDConverter):
         if member != auth:
             pass
         if match is None:
-            await ctx.send(f'{member} is not in the server, please use the correct syntax | [p]lick <member>')
+            await ctx.send(f':x: **{member}** is not in the server, please use the correct syntax | [p]kiss <member>')
             return False
         if guild:
             kissbed = discord.Embed(description=msg.format(mem=member, auth=auth), color=discord.Color(rand(self.clist)))
@@ -275,7 +274,7 @@ class Nuwu(commands.Cog, IDConverter):
         if member != auth:
             pass
         if match is None:
-            await ctx.send(f'{member} is not in the server, please use the correct syntax | [p]lick <member>')
+            await ctx.send(f':x: **{member}** is not in the server, please use the correct syntax | [p]smile <member>')
             return False
         if guild:
             smilebed = discord.Embed(description=msg.format(mem=member, auth=auth), color=discord.Color(rand(self.clist)))
@@ -297,7 +296,7 @@ class Nuwu(commands.Cog, IDConverter):
         if member != auth:
             pass
         if match is None:
-            await ctx.send(f'{member} is not in the server, please use the correct syntax | [p]lick <member>')
+            await ctx.send(f':x: **{member}** is not in the server, please use the correct syntax | [p]poke <member>')
             return False
         if guild:
             pokebed = discord.Embed(description=msg.format(mem=member, auth=auth), color=discord.Color(rand(self.clist)))
@@ -320,7 +319,7 @@ class Nuwu(commands.Cog, IDConverter):
         if member != auth:
             pass
         if match is None:
-            await ctx.send(f'{member} is not in the server, please use the correct syntax | [p]lick <member>')
+            await ctx.send(f':x: **{member}** is not in the server, please use the correct syntax | [p]lick <member>')
             return False
         if guild:
             lickbed = discord.Embed(description=msg.format(mem=member, auth=auth), color=discord.Color(rand(self.clist)))
@@ -342,7 +341,7 @@ class Nuwu(commands.Cog, IDConverter):
         if member != auth:
             pass
         if match is None:
-            await ctx.send(f'{member} is not in the server, please use the correct syntax | [p]lick <member>')
+            await ctx.send(f':x: **{member}** is not in the server, please use the correct syntax | [p]kill <member>')
             return False
         if guild:
             killbed = discord.Embed(description=msg.format(mem=member, auth=auth), color=discord.Color(rand(self.clist)))
