@@ -163,12 +163,11 @@ killg = [
     'https://media0.giphy.com/media/14igRO8Okm42rK/source.gif',
     'https://cdn.weeb.sh/images/HyXTiyKw-.gif',
     'https://66.media.tumblr.com/3c7c966dea8f11dee2c645a84180c33f/tumblr_pf7syag44Q1uhzwjbo1_400.gifv',
-    'https://i.gifer.com/N0Tq.gif',
-    'https://steamuserimages-a.akamaihd.net/ugc/942809797942516047/1DE56005A4B80A640E26405C56D925252289F00B/'
+    'https://i.gifer.com/N0Tq.gif'
 ]
 
 killm = [
-    '{auth} annihilated {member} Uhoh...',
+    '{auth} annihilated {mem} Uhoh...',
     '{mem} got killed by {auth}!',
     '{mem} died by the hands of {auth} 00F!'
 ]
