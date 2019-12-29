@@ -107,7 +107,7 @@ pokeg = [
   'https://4.bp.blogspot.com/-2jQvKwLGfMs/WPbrTtTEieI/AAAAAAAAzOA/KJsetp15cqs4nTuZGUoLmoTYeDHSsOMHgCPcB/s1600/Omake%2BGif%2BAnime%2B-%2BEromanga-sensei%2B-%2BEpisode%2B2%2B-%2BTomoe%2BPokes%2BMasamune%2527s%2BCheek.gif',
   'https://i.gifer.com/S010.gif',
   'https://1.bp.blogspot.com/-0cu-3g3bio4/Vx_hCIRUcYI/AAAAAAAAcE8/mcV22O8uolst5z3Rd-reMOPhxoLLMeXaACKgB/s1600/Omake%2BGif%2BAnime%2B-%2BKuma%2BMiko%2B-%2BEpisode%2B4%2B-%2BMachi%2BCheek%2BPoke.gif',
-  'https://media.tenor.com/images/0e20ef804a6ecdd9dcb8065e7390963f/tenor.gif',
+  'https://media1.tenor.com/images/a6f8bfa9e0e435db7d8bb13d2bc0d871/tenor.gif?itemid=3461603',
   'https://media.tenor.com/images/814ed3218c9899cdb79c3d9f5573495d/tenor.gif',
   'https://pa1.narvii.com/6946/d5b18a40da583b359f2e953c1c7abe27f4c28b21r1-600-338_hq.gif',
   'https://media1.tenor.com/images/ce3593d0d5052339cdae55ed0d75e7aa/tenor.gif?itemid=9966199',
