@@ -68,23 +68,23 @@ kissm = [
     ]
 
 smileg = [
-  'https://tinyurl.com/sqpd32d',
-  'https://tinyurl.com/v2bw45p',
-  'https://tinyurl.com/vs837wy',
-  'https://tinyurl.com/qtfv86r',
-  'https://tinyurl.com/t8uruwz',
-  'https://tinyurl.com/tsxcqb4',
-  'https://tinyurl.com/sxxw945',
-  'https://tinyurl.com/uc8qhsl',
-  'https://tinyurl.com/shcuo5q',
-  'https://tinyurl.com/w3ora95',
-  'https://tinyurl.com/rz97mrw',
-  'https://tinyurl.com/sbsbehy',
-  'https://tinyurl.com/tohxyhm',
-  'https://tinyurl.com/se3kddj',
-  'https://tinyurl.com/vqwwf24',
-  'https://tinyurl.com/tlrj7zl',
-  'https://tinyurl.com/wpgpwjp',
+  'https://media.giphy.com/media/ree8xCap5nHi/giphy.gif',
+  'https://media.giphy.com/media/ivibkKm68n3a/giphy.gif',
+  'https://thumbs.gfycat.com/OblongAdoredGoshawk-size_restricted.gif',
+  'https://media0.giphy.com/media/rFfmUWVMOyKVG/source.gif',
+  'https://media.giphy.com/media/arzM4yh4TgeNW/giphy.gif',
+  'https://thumbs.gfycat.com/SplendidBeautifulFieldspaniel-size_restricted.gif',
+  'https://data.whicdn.com/images/320836413/original.gif',
+  'http://cdn63.picsart.com/191956697002202.gif',
+  'https://i.pinimg.com/originals/ef/c9/47/efc9470fad6963192c9273e0c975ffb5.gif',
+  'https://i.kym-cdn.com/photos/images/newsfeed/001/139/889/b3a.gif',
+  'https://i.pinimg.com/originals/f6/82/fd/f682fd97c3bcb5c6f4bb4e84218f3f82.gif',
+  'https://thumbs.gfycat.com/LeadingShortCanadagoose-size_restricted.gif',
+  'https://img.buzzfeed.com/buzzfeed-static/static/2015-08/24/13/enhanced/webdr14/anigif_original-26898-1440435930-6.gif',
+  'https://steamuserimages-a.akamaihd.net/ugc/89351200168033872/687AAA1ADC378839A3437E2EB1DCA201DF106EE1/',
+  'https://i.pinimg.com/originals/97/c7/2b/97c72b01531ec28db47f155d43f11e66.gif',
+  'http://i.imgur.com/Y5o48VW.gif',
+  'https://media3.giphy.com/media/GT6hcXiYvsnxm/source.gif',
 
 ]
 
@@ -95,24 +95,24 @@ smilem = [
 ]
 
 pokeg = [
-  'https://tinyurl.com/vn2es66',
-  'https://tinyurl.com/shto3tc',
-  'https://tinyurl.com/wrc7soc',
-  'https://tinyurl.com/vx4jb58',
-  'https://tinyurl.com/u8n6rsk',
-  'https://tinyurl.com/v3wtwrk',
-  'https://tinyurl.com/qrsxchw',
-  'https://tinyurl.com/w2k87tc',
-  'https://tinyurl.com/wjzyrsh',
-  'https://tinyurl.com/snc3fbz',
-  'https://tinyurl.com/ueqqfeh',
-  'https://tinyurl.com/yx5ualte',
-  'https://tinyurl.com/tu3bmvg',
-  'https://tinyurl.com/u63ezhm',
-  'https://tinyurl.com/y6wqvm93',
-  'https://tinyurl.com/rdmjkw9',
-  'https://tinyurl.com/qlcuehm',
-  'https://tinyurl.com/thbft72'
+  'https://i.pinimg.com/originals/9d/25/23/9d25235a88f0fb52c3b72bf9404d2b7e.gif',
+  'https://thumbs.gfycat.com/ConventionalIlliterateFattaileddunnart-size_restricted.gif',
+  'https://media1.tenor.com/images/3b9cffb5b30236f678fdccf442006a43/tenor.gif?itemid=7739077',
+  'https://media1.tenor.com/images/01b264dc057eff2d0ee6869e9ed514c1/tenor.gif?itemid=14346763',
+  'https://gifimage.net/wp-content/uploads/2017/09/anime-poke-gif-9.gif',
+  'https://media.giphy.com/media/vqRI8gmKvrTOM/giphy.gif',
+  'https://thumbs.gfycat.com/ImprobableAdorableGardensnake-size_restricted.gif',
+  'https://i.imgur.com/Zi4ahyj.gif',
+  'https://ci.memecdn.com/262033.gif',
+  'https://4.bp.blogspot.com/-2jQvKwLGfMs/WPbrTtTEieI/AAAAAAAAzOA/KJsetp15cqs4nTuZGUoLmoTYeDHSsOMHgCPcB/s1600/Omake%2BGif%2BAnime%2B-%2BEromanga-sensei%2B-%2BEpisode%2B2%2B-%2BTomoe%2BPokes%2BMasamune%2527s%2BCheek.gif',
+  'https://i.gifer.com/S010.gif',
+  'https://1.bp.blogspot.com/-0cu-3g3bio4/Vx_hCIRUcYI/AAAAAAAAcE8/mcV22O8uolst5z3Rd-reMOPhxoLLMeXaACKgB/s1600/Omake%2BGif%2BAnime%2B-%2BKuma%2BMiko%2B-%2BEpisode%2B4%2B-%2BMachi%2BCheek%2BPoke.gif',
+  'https://media.tenor.com/images/0e20ef804a6ecdd9dcb8065e7390963f/tenor.gif',
+  'https://media.tenor.com/images/814ed3218c9899cdb79c3d9f5573495d/tenor.gif',
+  'https://pa1.narvii.com/6946/d5b18a40da583b359f2e953c1c7abe27f4c28b21r1-600-338_hq.gif',
+  'https://media1.tenor.com/images/ce3593d0d5052339cdae55ed0d75e7aa/tenor.gif?itemid=9966199',
+  'https://thumbs.gfycat.com/PlainHeartyGonolek-size_restricted.gif',
+  'http://i.imgur.com/oyIXHxY.gif'
 ]
 
 
@@ -124,24 +124,24 @@ pokem = [
 
 
 lickg = [
-  'https://tinyurl.com/r9pf8dd',
-  'https://tinyurl.com/ukaxkl9',
-  'https://tinyurl.com/vjxtj75',
-  'https://tinyurl.com/sys2xqp',
-  'https://tinyurl.com/wzghhdt',
-  'https://tinyurl.com/vjypp36',
-  'https://tinyurl.com/sx5bqcs',
-  'https://tinyurl.com/uq7exyw',
-  'https://tinyurl.com/uq7exyw',
-  'https://tinyurl.com/twe7rbm',
-  'https://tinyurl.com/vnsw6j3',
-  'https://tinyurl.com/r2rgfnx',
-  'https://tinyurl.com/tne6atv',
-  'https://tinyurl.com/udq6nxc',
-  'https://tinyurl.com/vdmwg9j',
-  'https://tinyurl.com/vrrrzpj',
-  'https://tinyurl.com/ukav5lp',
-  'https://tinyurl.com/y9z86edv'
+  'https://media.giphy.com/media/x4P8TaYhGn4FW/giphy.gif',
+  'https://i.gifer.com/CAmE.gif',
+  'https://media.giphy.com/media/8GiREm7aqMwN2/200.gif',
+  'https://ci.memecdn.com/5938991.gif',
+  'https://68.media.tumblr.com/b80cda919b3309f2cb974635e429db57/tumblr_osuazevFcj1qcsnnso1_500.gif',
+  'https://i.kym-cdn.com/photos/images/newsfeed/000/996/752/fdf.gif',
+  'https://pa1.narvii.com/5748/477a68bdbb9eaa255263eb970fda433b7dc7a38b_hq.gif',
+  'https://media1.tenor.com/images/4626d4bbe60ef15212e3181f11d6704a/tenor.gif?itemid=13451633',
+  'https://66.media.tumblr.com/1074acf4d3e68a0a94ab7c9d5eea6e7f/tumblr_njxe8wuAup1snkggso1_500.gif',
+  'https://media1.tenor.com/images/b4b16656ced5859d917c889709592b5d/tenor.gif?itemid=4863352',
+  'https://i.kym-cdn.com/photos/images/original/001/093/355/909.gif',
+  'https://33.media.tumblr.com/799d48bdb36dcbe6ee5717630f74e504/tumblr_n0bxdsE4M11rb3ea0o1_500.gif',
+  'https://38.media.tumblr.com/b0dea211949e13cd9c221ac6c3461da6/tumblr_nlhtufSUA61qbb4ago1_500.gif',
+  'https://media.tenor.com/images/ffb9602b95fe735fd757c183d25af18f/tenor.gif',
+  'https://media.tenor.com/images/3185cbd38fbf5b2e337b9a9de317c66c/tenor.gif',
+  'https://media.tenor.com/images/4daf1e8ec23c3869466d446439abf70b/tenor.gif',
+  'https://media1.tenor.com/images/8e16f796361326db09c5d81d18d91d28/tenor.gif?itemid=12630638',
+  'https://cdn.weeb.sh/images/Syg8gx0OP-.gif'
 ]
 
 lickm = [
@@ -152,17 +152,22 @@ lickm = [
 ]
 
 killg = [
-    'https://tinyurl.com/tajkkcw',
-    'https://tinyurl.com/rkb9yes',
-    'https://tinyurl.com/rrbunuq',
-    'https://tinyurl.com/stoyu4q',
-    'https://tinyurl.com/rpe8tjk',
-    'https://tinyurl.com/rpe8tjk',
-    'https://tinyurl.com/sk69fwx',
-    'https://tinyurl.com/r5jwyk6',
-    'https://tinyurl.com/tmzdm6x',
-    'https://tinyurl.com/qpvkvct',
-    'https://tinyurl.com/vg65mvv'
+    'https://cdn.weeb.sh/images/B1VnoJFDZ.gif',
+    'https://media0.giphy.com/media/BFL20NiE18A2A/source.gif',
+    'https://i.kym-cdn.com/photos/images/newsfeed/001/160/891/6d2.gif',
+    'https://media1.tenor.com/images/87cf4e6c9d7d523d736f9e8fddc4e951/tenor.gif?itemid=5502476',
+    'https://giffiles.alphacoders.com/128/128132.gif',
+    'http://pa1.narvii.com/5906/17326e3d54fc8b090596dc10a5835fce1a26192c_00.gif',
+    'https://img-comment-fun.9cache.com/media/a9W4Qj/aR7wQzYd_700wa_0.gif',
+    'https://i.kym-cdn.com/photos/images/original/000/961/693/421.gif',
+    'https://media0.giphy.com/media/14igRO8Okm42rK/source.gif',
+    'https://cdn.weeb.sh/images/HyXTiyKw-.gif',
+    'https://66.media.tumblr.com/3c7c966dea8f11dee2c645a84180c33f/tumblr_pf7syag44Q1uhzwjbo1_400.gifv',
+    'https://i.gifer.com/N0Tq.gif',
+    'https://media1.tenor.com/images/f16e5bcbac25180fa09b9d5c405b3f95/tenor.gif?itemid=14555236'
+    'http://0.media.dorkly.cvcdn.com/62/49/6318f988198210c1abe5632f2ca102d1.gif',
+    'https://data.whicdn.com/images/183868395/original.gif',
+    'https://image.myanimelist.net/ui/9cXh62VPK8XvW8ZJxsPa4oFGAIKH8_M9eyHr13deKTPi710eYgiiatXrhsbTnw7bLbe8er4cgy9obu9n2rpzWYzCVAG6KrU6gMABdDltH8tmd4ZHcokyUAWO11oKS0xR'
 ]
 
 killm = [
