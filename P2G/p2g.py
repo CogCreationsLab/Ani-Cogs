@@ -14,5 +14,5 @@ class P2G(commands.Cog):
         if ip is None:
             await ctx.send(':x: INCORRECT SYNTAX | [p]p2g <ipv4>')
         if ip:
-            geocalc = geocoder.ip(f'{ip}')
+            geocalc = geocoder.ip(f'{ipv4}')
             await ctx.send(f':white_check_mark: SUCCESSFULY CALCULATED GEOLOCATION VALUE | {geocalc.latlng} |')
