@@ -119,7 +119,7 @@ pokeg = [
 pokem = [
   '{auth} poked {mem} o0o!',
   '{mem} just got poked by {auth} -3-',
-  '{mem recieves a pokey pokey from {auth} =-='
+  '{mem} recieves a pokey pokey from {auth} =-='
 ]
 
 
