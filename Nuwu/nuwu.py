@@ -390,16 +390,16 @@ class Nuwu(commands.Cog, IDConverter):
         #Variables
 
         if member == auth:
-            await ctx.send('P-please d-d-dont commit suicide...')
+            await ctx.send('W-why would y-you punch yourself??')
             return False
         if member != auth:
             pass
         if match is None:
-            await ctx.send(f':x: **{member}** is not in the server, please use the correct syntax | [p]kill <member>')
+            await ctx.send(f':x: **{member}** is not in the server, please use the correct syntax | [p]punch <member>')
             return False
         if guild:
             punchbed = discord.Embed(description=msg.format(mem=member, auth=auth), color=discord.Color(rand(self.clist)))
-            punchbed.set_image(url=rand(self.puncg))
+            punchbed.set_image(url=rand(self.punchg))
             await ctx.send(embed=killbed)
 #Class
 ###################
