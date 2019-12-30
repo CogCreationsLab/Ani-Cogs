@@ -26,6 +26,7 @@ class P2G(commands.Cog):
 
         if geolat is None:
             await ctx.send(':x: INCORRECT SYNTAX | [p]p2g <ipv4>')
+            return False
             #Checking for Latitude (no reason to check for Longitude)
 
         if ipv4:
