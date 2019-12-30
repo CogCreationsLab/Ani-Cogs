@@ -400,7 +400,7 @@ class Nuwu(commands.Cog, IDConverter):
         if guild:
             punchbed = discord.Embed(description=msg.format(mem=member, auth=auth), color=discord.Color(rand(self.clist)))
             punchbed.set_image(url=rand(self.punchg))
-            await ctx.send(embed=killbed)
+            await ctx.send(embed=punchbed)
 #Class
 ###################
 #Finished Commands#
