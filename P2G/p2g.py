@@ -26,11 +26,7 @@ class P2G(commands.Cog):
 
         if geolat is None:
             await ctx.send(':x: INCORRECT SYNTAX | [p]p2g <ipv4>')
-            #Checking for Latitude
-
-        if geolng is None:
-            await ctx.send(':x: INCORRECT SYNTAX | [p]p2g <ipv4>')
-            #Checking for Longitude
+            #Checking for Latitude (no reason to check for Longitude)
 
         if ipv4:
             geobed = discord.Embed(description=mgmsg,color=discord.Color(0xff4040))
