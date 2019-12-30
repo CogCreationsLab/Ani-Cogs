@@ -24,10 +24,10 @@ class P2G(commands.Cog):
             await ctx.send(':x: INCORRECT SYNTAX | [p]p2g <ipv4>')
             #Checking for IPV4
 
-        if geolat is None:
+        if geolat and geolng is None:
             await ctx.send(':x: INCORRECT SYNTAX | [p]p2g <ipv4>')
             return False
-            #Checking for Latitude (no reason to check for Longitude)
+            #Checking for Latitude/Longitude
 
         if ipv4:
             geobed = discord.Embed(
@@ -36,5 +36,7 @@ class P2G(commands.Cog):
                 color=discord.Color(0xff4040)
             )
             geobed.add_field(name='Google Maps URL: ', value=mgmap, inline=True)
+            #Creating Embed
+
             await ctx.send(embed=geobed)
-            #Creating & Sending Embed
+            #Sending Embed
