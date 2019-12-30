@@ -30,7 +30,11 @@ class P2G(commands.Cog):
             #Checking for Latitude (no reason to check for Longitude)
 
         if ipv4:
-            geobed = discord.Embed(description=mgmsg,color=discord.Color(0xff4040))
-            geobed.set_image(url=mgmap)
+            geobed = discord.Embed(
+                title='GEOLOCATION CORDINATES',
+                description=mgmsg,
+                color=discord.Color(0xff4040)
+            )
+            geobed.add_field(name='Google Maps URL: ', value=mgmap, inline=true)
             await ctx.send(embed=geobed)
             #Creating & Sending Embed
