@@ -35,6 +35,6 @@ class P2G(commands.Cog):
                 description=mgmsg,
                 color=discord.Color(0xff4040)
             )
-            geobed.add_field(name='Google Maps URL: ', value=mgmap, inline=true)
+            geobed.add_field(name='Google Maps URL: ', value=mgmap, inline=True)
             await ctx.send(embed=geobed)
             #Creating & Sending Embed
