@@ -166,7 +166,8 @@ killg = [
     'https://media1.tenor.com/images/f16e5bcbac25180fa09b9d5c405b3f95/tenor.gif?itemid=14555236'
     'http://0.media.dorkly.cvcdn.com/62/49/6318f988198210c1abe5632f2ca102d1.gif',
     'https://data.whicdn.com/images/183868395/original.gif',
-    'https://image.myanimelist.net/ui/9cXh62VPK8XvW8ZJxsPa4oFGAIKH8_M9eyHr13deKTPi710eYgiiatXrhsbTnw7bLbe8er4cgy9obu9n2rpzWYzCVAG6KrU6gMABdDltH8tmd4ZHcokyUAWO11oKS0xR'
+    'https://image.myanimelist.net/ui/9cXh62VPK8XvW8ZJxsPa4oFGAIKH8_M9eyHr13deKTPi710eYgiiatXrhsbTnw7bLbe8er4cgy9obu9n2rpzWYzCVAG6KrU6gMABdDltH8tmd4ZHcokyUAWO11oKS0xR',
+    'https://giphy.com/gifs/straight-normal-kill-yGZnLLLmHVEB2'
 ]
 
 killm = [
@@ -175,6 +176,29 @@ killm = [
     '{mem} died by the hands of {auth} 00F!'
 ]
 
+punchg = [
+  'https://media0.giphy.com/media/arbHBoiUWUgmc/giphy.gif',
+  'https://i.imgur.com/g91XPGA.gif',
+  'https://media1.giphy.com/media/YjHx1taZwpfd6/source.gif',
+  'https://media1.tenor.com/images/31686440e805309d34e94219e4bedac1/tenor.gif?itemid=4790446',
+  'https://thumbs.gfycat.com/ImperfectFrightenedFoal-size_restricted.gif',
+  'https://media1.giphy.com/media/pwKq0OdqMzLyw/source.gif',
+  'https://thumbs.gfycat.com/IllinformedRipeFlounder-size_restricted.gif',
+  'https://gifimage.net/wp-content/uploads/2017/09/anime-punch-gif-9.gif',
+  'https://data.whicdn.com/images/286613675/original.gif',
+  'https://thumbs.gfycat.com/TeemingMeekGrouse-size_restricted.gif',
+  'https://media0.giphy.com/media/xUO4t2gkWBxDi/giphy.gif',
+  'https://i.kym-cdn.com/photos/images/newsfeed/000/827/915/9de.gif',
+  'https://thumbs.gfycat.com/MenacingSeveralChanticleer-size_restricted.gif',
+  'https://i.imgur.com/BhvWwuS.gif',
+  'https://data.whicdn.com/images/314108732/original.gif'
+]
+
+punchm = [
+  '{mem} got smoked in the face by {auth} OUCH!',
+  'Is {mem} alright after taking that punch??!?',
+  '{auth} gave a devastating blow to {mem}! 👊'
+]
 
 clist = [
     0xeb4034,
@@ -186,6 +210,7 @@ clist = [
 ]
 
 #Lists
+
 class Converter:
     async def convert(self, ctx, argument):
         raise NotImplementedError('Derived classes need to implement this.')
@@ -207,6 +232,7 @@ class Nuwu(commands.Cog, IDConverter):
         self.pokeg = pokeg
         self.lickg = lickg
         self.killg = killg
+        self.punchg = punchg
         #Gifs
 
         self.patm = patm
@@ -215,6 +241,7 @@ class Nuwu(commands.Cog, IDConverter):
         self.pokem = pokem
         self.lickm = lickm
         self.killm = killm
+        self.punchm = punchm
         #Messages
 
         self.clist = clist
@@ -352,6 +379,28 @@ class Nuwu(commands.Cog, IDConverter):
             killbed = discord.Embed(description=msg.format(mem=member, auth=auth), color=discord.Color(rand(self.clist)))
             killbed.set_image(url=rand(self.killg))
             await ctx.send(embed=killbed)
+
+    @commands.command()
+    async def punch(self, ctx, member):
+        fauth = ctx.message.author.id
+        auth = f'<@!{fauth}>'
+        match = self._get_id_match(member) or re.match(r'<@!?([0-9]+)>$', member)
+        guild = ctx.guild
+        msg = rand(self.punchm)
+        #Variables
+
+        if member == auth:
+            await ctx.send('P-please d-d-dont commit suicide...')
+            return False
+        if member != auth:
+            pass
+        if match is None:
+            await ctx.send(f':x: **{member}** is not in the server, please use the correct syntax | [p]kill <member>')
+            return False
+        if guild:
+            punchbed = discord.Embed(description=msg.format(mem=member, auth=auth), color=discord.Color(rand(self.clist)))
+            punchbed.set_image(url=rand(self.puncg))
+            await ctx.send(embed=killbed)
 #Class
 ###################
 #Finished Commands#
@@ -362,6 +411,7 @@ class Nuwu(commands.Cog, IDConverter):
 # -Kiss
 # -Lick
 # -Kill
+# -Punch
 
 #################
 #Commands To Add#
@@ -376,7 +426,6 @@ class Nuwu(commands.Cog, IDConverter):
 # -Highfive
 # -Bite
 # -Greet
-# -Punch
 # -Handholding
 # -Tickle
 # -Kill
