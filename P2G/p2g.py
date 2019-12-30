@@ -24,7 +24,7 @@ class P2G(commands.Cog):
             await ctx.send(':x: INCORRECT SYNTAX | [p]p2g <ipv4>')
             #Checking for IPV4
 
-        if geolat and geolng is None:
+        if geolat is None and geolng is None:
             await ctx.send(':x: INCORRECT SYNTAX | [p]p2g <ipv4>')
             return False
             #Checking for Latitude/Longitude
