@@ -24,7 +24,7 @@ class Porto(commands.Cog):
         await ctx.send(f'*[+] SCANNING **{ipv4}** FOR OPEN PORTS[+]*')
         #Confirmation message
 
-        for port in range(port1, port2):
+        for port in range(int(port1), int(port2)):
             if sock.connect_ex((ipv4, port)):
                 open_ports.append(port)
                 #Adding open ports to list
