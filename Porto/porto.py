@@ -17,7 +17,8 @@ class Porto(commands.Cog):
         title = 'OPEN PORTS',
         color= discord.Color(0x7bf542)
         )
-        sockbed.add_field(open_ports)
+        for p in open_ports:
+            sockbed.add_field(p)
         #Variables
 
         await ctx.send(f'[+] SCANNNING {ipv4} FOR OPEN PORTS[+]')
