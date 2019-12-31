@@ -21,11 +21,11 @@ class Porto(commands.Cog):
             sockbed.add_field(p)
         #Variables
 
-        await ctx.send(f'[+] SCANNNING {ipv4} FOR OPEN PORTS[+]')
+        await ctx.send(f'*[+] SCANNING **{ipv4}** FOR OPEN PORTS[+]*')
         #Confirmation message
 
         for port in range(80,65500):
-            if s.connect_ex((ipv4, port)):
+            if sock.connect_ex((ipv4, port)):
                 open_ports.append(port)
                 #Adding open ports to list
             else:
