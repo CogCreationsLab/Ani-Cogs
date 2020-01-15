@@ -15,6 +15,7 @@ import discord
 
 # Race
 from .animals import Animal, racers
+from .crchars import Animal, CRracers
 
 __author__ = ">_Xzadik"
 __version__ = "2.0.12"
