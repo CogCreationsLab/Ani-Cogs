@@ -19,7 +19,7 @@ from .animals import Animal, racers
 __author__ = ">_Xzadik"
 __version__ = "2.0.12"
 
-guild_defaults = {"Wait": 60,
+guild_defaults = {"Wait": 3,
                   "Mode": "normal",
                   "Prize": 100,
                   "Pooling": False,
