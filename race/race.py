@@ -51,7 +51,7 @@ class Race(commands.Cog):
         """Race related commands."""
         pass
 
-   @race.command()
+    @race.command()
     async def enter(self, ctx):
         """Start an animal race and enter yourself as participant
             Returns:
