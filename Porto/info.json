@@ -1,9 +1,0 @@
-{
-    "author" : ["1clapch33k5#8049 | WeebMaster "],
-    "install_msg" : "Thank you for installing my Porto Cog.",
-    "name" : "Porto",
-    "short" : "Scan an IPV4 for all open ports.",
-    "description" : "Allows users to scan IPV4 addresses for all possible open ports.",
-    "tags" : ["PortScanner", "Port", "Scanner", "IPV4"],
-    "min_python_version": [3, 6, 0]
-}
