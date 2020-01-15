@@ -21,7 +21,7 @@ __version__ = "2.0.12"
 creditIcon = "https://i.imgur.com/kHoWBzl.png"
 credits = "Bot by >_Xzadik | CRZA5"
 
-guild_defaults = {"Wait": 60,
+guild_defaults = {"Wait": 5,
                   "Mode": "normal",
                   "Prize": 100,
                   "Pooling": False,
