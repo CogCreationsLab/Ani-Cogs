@@ -258,7 +258,7 @@ class Race(commands.Cog):
             Racers are randomly selected from a list of animals with
             different attributes.
         """
-        if mode.lower() not in ('zoo', 'normal', `clashroyale`):
+        if mode.lower() not in ('zoo', 'normal', 'clashroyale'):
             return await ctx.send("Must select either `zoo`, `normal`, or `clashroyale` as a mode.")
 
         await self.db.guild(ctx.guild).Mode.set(mode.lower())
