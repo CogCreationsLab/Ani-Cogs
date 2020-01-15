@@ -14,7 +14,7 @@ import discord
 # Race
 from .animals import Animal, racers
 
-__author__ = "Redjumpman"
+__author__ = ">_Xzadik"
 __version__ = "2.0.12"
 
 guild_defaults = {"Wait": 3,
@@ -470,7 +470,7 @@ class Race(commands.Cog):
 
     async def run_game(self, ctx):
         players = await self._game_setup(ctx)
-        setup = "\u200b\n" + '\n'.join(f"<a:Crown:666910233674907668> **{animal.current}** 🏁"  
+        setup = "\u200b\n" + '\n'.join(f"<a:Crown:666910233674907668> **{animal.current}** <:Elixir:666927129887244288> "  
                                        f"[{jockey.name}]" for animal, jockey in players)
         track = await ctx.send(setup)
         while not all(animal.position == 0 for animal, jockey in players):
@@ -479,10 +479,10 @@ class Race(commands.Cog):
             fields = []
             for animal, jockey in players:
                 if animal.position == 0:
-                    fields.append(f"<a:Crown:666910233674907668> **{animal.current}** 🏁  [{jockey.name}]")
+                    fields.append(f"<a:Crown:666910233674907668> **{animal.current}** <:Elixir:666927129887244288>   [{jockey.name}]")
                     continue
                 animal.move()
-                fields.append(f"<a:Crown:666910233674907668> **{animal.current}** 🏁  [{jockey.name}]")
+                fields.append(f"<a:Crown:666910233674907668> **{animal.current}** <:Elixir:666927129887244288>   [{jockey.name}]")
                 if animal.position == 0 and len(self.winners) < 3:
                     self.winners.append((jockey, animal))
             t = "\u200b\n" + "\n".join(fields)
