@@ -130,10 +130,6 @@ class Race(commands.Cog):
             await bank.withdraw_credits(ctx.author, bet)
             await ctx.send(f"{ctx.author.mention} placed a {bet} {currency} bet on {str(user)}.")
 
-    @race.command()
-         await bank.withdraw_credits(ctx.author, bet)
-            await ctx.send(f"{ctx.author.mention} placed a {bet} {currency} bet on {str(user)}.")
-
     @race.command(hidden=True)
     @checks.admin_or_permissions(administrator=True)
     async def clear(self, ctx):
