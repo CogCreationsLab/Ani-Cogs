@@ -18,8 +18,6 @@ from .animals import Animal, racers
 
 __author__ = ">_Xzadik"
 __version__ = "2.0.12"
-creditIcon = "https://i.imgur.com/kHoWBzl.png"
-credits = "Bot by >_Xzadik | CRZA5"
 
 guild_defaults = {"Wait": 5,
                   "Mode": "normal",
