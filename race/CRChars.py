@@ -31,7 +31,7 @@ CRracers = ((self.emoji('Bandit'), 'predator'), (self.emoji('MegaKnight'), 'pred
             (self.emoji('EliteBarbarians'), 'fast'), (self.emoji('RoyalGiant'), 'slow'),
             (self.emoji('Rascals'), 'abberant'), (self.emoji('RoyalRecruits'), 'steady')
 
-class Animal:
+class CRChars:
     def __init__(self, emoji, _type):
         self.emoji = emoji
         self._type = _type
