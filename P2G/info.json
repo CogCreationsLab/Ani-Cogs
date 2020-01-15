@@ -1,9 +1,0 @@
-{
-    "author" : ["1clapch33k5#8049 | WeebMaster "],
-    "install_msg" : "Thank you for installing my P2G Cog.",
-    "name" : "P2G",
-    "short" : "Convert a IPV4 address into a real Geolocation value!",
-    "description" : "P2G allows you to convert an IPV4 address into a real Geolocation value.",
-    "tags" : ["IPV4", "Geolocation", "GoogleMaps", "Hacking"],
-    "min_python_version": [3, 6, 0]
-}
