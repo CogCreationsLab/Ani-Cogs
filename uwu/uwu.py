@@ -224,7 +224,7 @@ class IDConverter(Converter):
         return self._id_regex.match(argument)
 
 
-class Nuwu(commands.Cog, IDConverter):
+class uwu(commands.Cog, IDConverter):
     def __init__(self, bot):
         self.patg = patg
         self.kissg = kissg
