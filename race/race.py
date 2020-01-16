@@ -14,7 +14,7 @@ import discord
 # Race
 from .animals import Animal, racers
 
-__author__ = ">_Xzadik"
+__author__ = "Redjumpman"
 __version__ = "2.0.12"
 
 guild_defaults = {"Wait": 60,
@@ -59,17 +59,17 @@ class Race(commands.Cog):
         By not repeatedly telling the user that they can't enter the race, this
         prevents spam.
         """
-        if self.started:
-            return await ctx.send("A race has already started.  Please wait for the first one to finish before entering or starting a race.")
-        elif not self.active:
-            return await ctx.send("A race must be started before you can enter.")
-        elif ctx.author in self.players:
-            return await ctx.send("You have already entered the race.")
-        elif len(self.players) >= 14:
-            return await ctx.send("The maximum number of players has been reached.")
-        else:
-            self.players.append(ctx.author)
-            await ctx.send(f"{ctx.author.mention} has joined the race.")
+            if self.started:
+                return await ctx.send("A race has already started.  Please wait for the first one to finish before entering or starting a race.")
+            elif not self.active:
+                return await ctx.send("A race must be started before you can enter.")
+            elif ctx.author in self.players:
+                return await ctx.send("You have already entered the race.")
+            elif len(self.players) >= 14:
+                return await ctx.send("The maximum number of players has been reached.")
+            else:
+                self.players.append(ctx.author)
+                await ctx.send(f"{ctx.author.mention} has joined the race.")
 
         if not self.active:
          """Begins a new race.
@@ -78,27 +78,27 @@ class Race(commands.Cog):
         your bot.
         The user who started the race is automatically entered into the race.
         """
-        if self.active:
-            return await ctx.send("A race is already in progress!  Type `[p]race enter` to enter!")
-        self.active = True
-        self.players.append(ctx.author)
-        wait = await self.db.guild(ctx.guild).Wait()
-        current = await self.db.guild(ctx.guild).Games_Played()
-        await self.db.guild(ctx.guild).Games_Played.set(current + 1)
-        await ctx.send(f"🚩 A race has begun! Type {ctx.prefix}race enter "
-                       f"to join the race! 🚩\nThe race will begin in "
-                       f"{wait} seconds!\n\n**{ctx.author.mention}** entered the race!")
-        await asyncio.sleep(wait)
-        self.started = True
-        await ctx.send("🏁 The race is now in progress. 🏁")
-        await self.run_game(ctx)
+            if self.active:
+                return await ctx.send("A race is already in progress!  Type `[p]race enter` to enter!")
+            self.active = True
+            self.players.append(ctx.author)
+            wait = await self.db.guild(ctx.guild).Wait()
+            current = await self.db.guild(ctx.guild).Games_Played()
+            await self.db.guild(ctx.guild).Games_Played.set(current + 1)
+            await ctx.send(f"🚩 A race has begun! Type {ctx.prefix}race enter "
+                        f"to join the race! 🚩\nThe race will begin in "
+                        f"{wait} seconds!\n\n**{ctx.author.mention}** entered the race!")
+            await asyncio.sleep(wait)
+            self.started = True
+            await ctx.send("🏁 The race is now in progress. 🏁")
+            await self.run_game(ctx)
 
-        settings = await self.db.guild(ctx.guild).all()
-        currency = await bank.get_currency_name(ctx.guild)
-        color = await ctx.embed_colour()
-        msg, embed = self._build_end_screen(settings, currency, color)
-        await ctx.send(content=msg, embed=embed)
-        await self._race_teardown(settings)
+            settings = await self.db.guild(ctx.guild).all()
+            currency = await bank.get_currency_name(ctx.guild)
+            color = await ctx.embed_colour()
+            msg, embed = self._build_end_screen(settings, currency, color)
+            await ctx.send(content=msg, embed=embed)
+            await self._race_teardown(settings)
 
     @race.command()
     async def stats(self, ctx, user: discord.Member = None):
