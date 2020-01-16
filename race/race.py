@@ -53,6 +53,11 @@ class Race(commands.Cog):
 
     @race.command()
     async def enter(self, ctx):
+        
+        channel = ctx.message.channel
+        if channel.name != "race":
+            return await self.bot.say("You cannot run this command in this channel. Please run this command at #race")
+
         if self.active:
             if self.started:
                 return await ctx.send("A race has already started.  Please wait for the first one to finish before entering or starting a race.")
