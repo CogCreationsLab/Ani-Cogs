@@ -1,4 +1,4 @@
-# Developed by Redjumpman for Redbot.
+# Original Developed by Redjumpman
 # Inspired by the snail race mini game.
 
 # Standard Library
@@ -14,7 +14,7 @@ import discord
 # Race
 from .animals import Animal, racers
 
-__author__ = "Redjumpman"
+__author__ = ">_Xzadik"
 __version__ = "2.0.12"
 
 guild_defaults = {"Wait": 60,
@@ -50,9 +50,7 @@ class Race(commands.Cog):
     async def race(self, ctx):
         """Race related commands."""
         pass
-
-    @race.command()
-    async def race(self, ctx):
+    
         if self.active:
             if self.started:
                 return await ctx.send("A race has already started.  Please wait for the first one to finish before entering or starting a race.")
