@@ -59,7 +59,7 @@ class Race(commands.Cog):
         By not repeatedly telling the user that they can't enter the race, this
         prevents spam.
         
-        """
+          """
             if self.started:
                 return await ctx.send("A race has already started.  Please wait for the first one to finish before entering or starting a race.")
             elif not self.active:
@@ -79,7 +79,7 @@ class Race(commands.Cog):
         your bot.
         The user who started the race is automatically entered into the race.
         
-        """
+          """
             if self.active:
                 return await ctx.send("A race is already in progress!  Type `[p]race enter` to enter!")
             self.active = True
