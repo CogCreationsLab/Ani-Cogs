@@ -17,7 +17,7 @@ from .animals import Animal, racers
 __author__ = ">_Xzadik"
 __version__ = "2.0.12"
 
-guild_defaults = {"Wait": 3,
+guild_defaults = {"Wait": 60,
                   "Mode": "normal",
                   "Prize": 100,
                   "Pooling": False,
@@ -51,116 +51,54 @@ class Race(commands.Cog):
         """Race related commands."""
         pass
 
-    @race.command()
-    async def enter(self, ctx):
-        """Start an animal race and enter yourself as participant
-            Returns:
-                Two text outputs. One to start the race,
-                and the second to represent the race. The second
-                msg will be edited multiple times to represent the race.
-            Notes:
-                Must wait 2 minutes after every race to start a new one.
-                You cannot start a race if a race is already active.
-                A race is considered active once this command is used.
-                A race is considered started once the track is displayed.
-                The user who starts a race, will be automatically entered.
-                The bot will always join a race.
-                There are no cheaters and it isn't rigged.
+    @commands.command()
+    async def race(self, ctx):
+        if self.active:
+        """Allows you to enter the race.
+        This command will return silently if a race has already started.
+        By not repeatedly telling the user that they can't enter the race, this
+        prevents spam.
         """
-        author = ctx.message.author
-        server = ctx.message.server
-        data = self.check_server(author.server)
-        cooldown = self.check_cooldown(author.server)
-        settings = self.check_config(author.server)
-        cost = settings["Cost"]
-        timer = 600
-
-        channel = ctx.message.channel
-        if channel.name != "race":
-            return await self.bot.say("You cannot run this command in this channel. Please run this command at #race")
-
-        if data['Race Active']:
-            if author.id in data['Players']:
-                return await self.bot.say("You are already in the race!")
-            elif not self.bank_check(settings, author):
-                return await self.bot.say("You do not meet the cost of entry. You need atleast {} credits.".format(cost))
-            elif len(data['Players']) == 10:
-                return await self.bot.say("There are no more spots left in the race!")
-            else:
-                bank = self.bot.get_cog('Economy').bank
-                bank.withdraw_credits(author, cost)
-                data['Players'][author.id] = {}
-                return await self.bot.say("**{}** entered the race!".format(author.display_name))
-
-        if time.time() - cooldown < timer:
-            return await self.bot.say("You need to wait {} before starting another race.".format(self.time_format(int(timer - (time.time() - cooldown)))))
-
-        if self.bank_check(settings, author):
-            bank = self.bot.get_cog('Economy').bank
-            bank.withdraw_credits(author, cost)
+        if self.started:
+            return await ctx.send("A race has already started.  Please wait for the first one to finish before entering or starting a race.")
+        elif not self.active:
+            return await ctx.send("A race must be started before you can enter.")
+        elif ctx.author in self.players:
+            return await ctx.send("You have already entered the race.")
+        elif len(self.players) >= 14:
+            return await ctx.send("The maximum number of players has been reached.")
         else:
-            return await self.bot.say("You do not meet the cost of entry. You need atleast {} credits.".format(cost))
+            self.players.append(ctx.author)
+            await ctx.send(f"{ctx.author.mention} has joined the race.")
 
-        role_name = "Race"
-        raceRole = discord.utils.get(server.roles, name=role_name)
-        if raceRole is None:
-            await self.bot.create_role(server, name=role_name)
-            raceRole = discord.utils.get(server.roles, name=role_name)
-
-        self.game_teardown(data, force=True)
-        data['Race Active'] = True
-        data['Players'][author.id] = {}
-        wait = settings['Time']
-
-        await self.bot.edit_role(server, raceRole, mentionable=True)
-        await self.bot.say(":triangular_flag_on_post: {} has started a race! Type ``{}race enter`` "
-                           "to join! :triangular_flag_on_post:\n{}The {} will "
-                           "begin in {} seconds!".format(author.mention, ctx.prefix, ' ' * 23, raceRole.mention, wait))
-        await self.bot.edit_role(server, raceRole, mentionable=False)
-
+        if not self.active:
+         """Begins a new race.
+        You cannot start a new race until the active on has ended.
+        If you are the only player in the race, you will race against
+        your bot.
+        The user who started the race is automatically entered into the race.
+        """
+        if self.active:
+            return await ctx.send("A race is already in progress!  Type `[p]race enter` to enter!")
+        self.active = True
+        self.players.append(ctx.author)
+        wait = await self.db.guild(ctx.guild).Wait()
+        current = await self.db.guild(ctx.guild).Games_Played()
+        await self.db.guild(ctx.guild).Games_Played.set(current + 1)
+        await ctx.send(f"🚩 A race has begun! Type {ctx.prefix}race enter "
+                       f"to join the race! 🚩\nThe race will begin in "
+                       f"{wait} seconds!\n\n**{ctx.author.mention}** entered the race!")
         await asyncio.sleep(wait)
+        self.started = True
+        await ctx.send("🏁 The race is now in progress. 🏁")
+        await self.run_game(ctx)
 
-        racers = self.game_setup(author, data, settings['Mode'])
-
-        await self.bot.say(":checkered_flag: The race is now in progress :checkered_flag:")
-
-        data['Race Start'] = True
-
-        perm = discord.PermissionOverwrite(send_messages=False, read_messages=False)
-        await self.bot.edit_channel_permissions(ctx.message.channel, server.default_role, perm)
-
-        race_msg = await self.bot.say('\u200b'+'\n'+'\n'.join([player.field() for player in racers]))
-        await self.run_game(racers, race_msg, data)
-
-        first = ':first_place:  {0.display_name}'.format(*data['First'])
-        fv = '{1} {2:.2f}s'.format(*data['First'])
-        second = ':second_place: {0.display_name}'.format(*data['Second'])
-        sv = '{1} {2:.2f}s'.format(*data['Second'])
-        if data['Third']:
-            mention = "{} {} {}".format(data['First'][0].mention, data['Second'][0].mention, data['Third'][0].mention)
-            third = ':third_place:  {0.display_name}'.format(*data['Third'])
-            tv = '{1} {2:.2f}s'.format(*data['Third'])
-        else:
-            mention = "{} {}".format(data['First'][0].mention, data['Second'][0].mention)
-            third = ':third_place:'
-            tv = '--'
-
-        perm = discord.PermissionOverwrite(send_messages=None, read_messages=False)
-        await self.bot.edit_channel_permissions(ctx.message.channel, server.default_role, perm)
-
-        embed = discord.Embed(colour=0x00CC33)
-        embed.add_field(name=first, value=fv)
-        embed.add_field(name=second, value=sv)
-        embed.add_field(name=third, value=tv)
-        embed.add_field(name='-' * 70, value='Type ``!race claim`` to receive prize money. \nType ``!togglerole race`` to get notified on the next race.')
-        embed.title = "Race Results"
-        embed.set_footer(text=credits, icon_url=creditIcon)
-        await self.bot.say(content=mention, embed=embed)
-
-        self.game_teardown(data)
-
-        self.cooldown[server.id] = time.time()
-
+        settings = await self.db.guild(ctx.guild).all()
+        currency = await bank.get_currency_name(ctx.guild)
+        color = await ctx.embed_colour()
+        msg, embed = self._build_end_screen(settings, currency, color)
+        await ctx.send(content=msg, embed=embed)
+        await self._race_teardown(settings)
 
     @race.command()
     async def stats(self, ctx, user: discord.Member = None):
@@ -194,7 +132,6 @@ class Race(commands.Cog):
             await bank.withdraw_credits(ctx.author, bet)
             await ctx.send(f"{ctx.author.mention} placed a {bet} {currency} bet on {str(user)}.")
 
-    
     @race.command(hidden=True)
     @checks.admin_or_permissions(administrator=True)
     async def clear(self, ctx):
@@ -528,7 +465,7 @@ class Race(commands.Cog):
 
     async def run_game(self, ctx):
         players = await self._game_setup(ctx)
-        setup = "\u200b\n" + '\n'.join(f"<a:Crown:666910233674907668> **{animal.current}** <:Elixir:666927129887244288> "  
+        setup = "\u200b\n" + '\n'.join(f"<a:Crown:666910233674907668> **{animal.current}** <:Elixir:666927129887244288>"  
                                        f"[{jockey.name}]" for animal, jockey in players)
         track = await ctx.send(setup)
         while not all(animal.position == 0 for animal, jockey in players):
@@ -537,10 +474,10 @@ class Race(commands.Cog):
             fields = []
             for animal, jockey in players:
                 if animal.position == 0:
-                    fields.append(f"<a:Crown:666910233674907668> **{animal.current}** <:Elixir:666927129887244288>   [{jockey.name}]")
+                    fields.append(f"<a:Crown:666910233674907668> **{animal.current}** <:Elixir:666927129887244288>  [{jockey.name}]")
                     continue
                 animal.move()
-                fields.append(f"<a:Crown:666910233674907668> **{animal.current}** <:Elixir:666927129887244288>   [{jockey.name}]")
+                fields.append(f"<a:Crown:666910233674907668> **{animal.current}** <:Elixir:666927129887244288>  [{jockey.name}]")
                 if animal.position == 0 and len(self.winners) < 3:
                     self.winners.append((jockey, animal))
             t = "\u200b\n" + "\n".join(fields)
