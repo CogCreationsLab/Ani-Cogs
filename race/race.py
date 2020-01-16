@@ -451,22 +451,18 @@ class Race(commands.Cog):
             players = [(Animal(*random.choice(racers)), user) for user in users]
             if len(players) == 1:
                 players.append((Animal(*random.choice(racers)), ctx.bot.user))
+         
+        elif mode == 'clashroyale':
+            players = [(Animal(*random.choice(crracers)), user) for user in users]
+            if len(players) == 1:
+                players.append((Animal(*random.choice(crracers)), ctx.bot.user))
+                       
         else:
             players = [(Animal(":turtle:", "slow"), user) for user in users]
             if len(players) == 1:
                 players.append((Animal(":turtle:", "slow"), ctx.bot.user))
         return players
         
-        mode = await self.db.guild(ctx.guild).Mode()
-        users = self.players
-        if mode == 'clashroyale':
-            players = [(CRchars(*random.choice(CRracers)), user) for user in users]
-            if len(players) == 1:
-                players.append((CRchars(*random.choice(CRracers)), ctx.bot.user))
-        else:
-            players = [(Animal(":turtle:", "slow"), user) for user in users]
-            if len(players) == 1:
-                players.append((Animal(":turtle:", "slow"), ctx.bot.user))
         return players
 
     async def run_game(self, ctx):
