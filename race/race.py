@@ -80,8 +80,8 @@ class Race(commands.Cog):
             current = await self.db.guild(ctx.guild).Games_Played()
             await self.db.guild(ctx.guild).Games_Played.set(current + 1)
             await ctx.send(f"🚩 {ctx.author.mention} has started a race!\nType `b!race enter` "
-                        f"to join the race! 🚩\n{}The <@&667276828142075924> will begin in "
-                        f"{wait} seconds!\n\n**{ctx.author}** has entered the race!")
+                        f"to join the race! 🚩\n+5#The <@&667276828142075924> will begin in "
+                        f"{wait} seconds!>>> \n\n**{ctx.author}** has entered the race!")
             await asyncio.sleep(wait)
             self.started = True
             await ctx.send("🏁 The race is now in progress. 🏁")
