@@ -12,7 +12,7 @@ from redbot.core import Config, bank, commands, checks
 import discord
 
 # Race
-from .animals import Animal, racers, crracers
+from .animals import Animal, crracers
 
 __author__ = ">_Xzadik"
 __version__ = "2.0.12"
@@ -447,20 +447,14 @@ class Race(commands.Cog):
     async def _game_setup(self, ctx):
         mode = await self.db.guild(ctx.guild).Mode()
         users = self.players
-        if mode == 'zoo':
-            players = [(Animal(*random.choice(racers)), user) for user in users]
-            if len(players) == 1:
-                players.append((Animal(*random.choice(racers)), ctx.bot.user))
-         
-        elif mode == 'clashroyale':
+        if mode == 'clashroyale':
             players = [(Animal(*random.choice(crracers)), user) for user in users]
             if len(players) == 1:
-                players.append((Animal(*random.choice(crracers)), ctx.bot.user))
-                       
+                players.append((Animal(*random.choice(crracers)), ctx.bot.user))           
         else:
-            players = [(Animal(":turtle:", "slow"), user) for user in users]
+            players = [(Animal(":Knight:", "slow"), user) for user in users]
             if len(players) == 1:
-                players.append((Animal(":turtle:", "slow"), ctx.bot.user))
+                players.append((Animal(":knight:", "slow"), ctx.bot.user))
         return players
         
         return players
