@@ -13,6 +13,7 @@ import discord
 
 # Race
 from .animals import Animal, racers
+from .CRchars import CRchars, CRracers
 
 __author__ = ">_Xzadik"
 __version__ = "2.0.12"
@@ -80,7 +81,7 @@ class Race(commands.Cog):
             current = await self.db.guild(ctx.guild).Games_Played()
             await self.db.guild(ctx.guild).Games_Played.set(current + 1)
             await ctx.send(f"🚩 {ctx.author.mention} has started a race! Type `{ctx.prefix}race enter` "
-                        f"to join the race! 🚩\nThe @race will begin in "
+                        f"to join the race! 🚩\nThe <@&667276828142075924> will begin in "
                         f"{wait} seconds!\n\n**{ctx.author.mention}** has entered the race!")
             await asyncio.sleep(wait)
             self.started = True
@@ -244,8 +245,8 @@ class Race(commands.Cog):
             Racers are randomly selected from a list of animals with
             different attributes.
         """
-        if mode.lower() not in ('zoo', 'normal'):
-            return await ctx.send("Must select either `zoo` or `normal` as a mode.")
+        if mode.lower() not in ('zoo', 'normal', 'clashroyale'):
+            return await ctx.send("Must select either `zoo`, `normal`, or clashroyale as a mode.")
 
         await self.db.guild(ctx.guild).Mode.set(mode.lower())
         await ctx.send(f"Mode changed to {mode.lower()}")
@@ -451,6 +452,18 @@ class Race(commands.Cog):
             players = [(Animal(*random.choice(racers)), user) for user in users]
             if len(players) == 1:
                 players.append((Animal(*random.choice(racers)), ctx.bot.user))
+        else:
+            players = [(Animal(":turtle:", "slow"), user) for user in users]
+            if len(players) == 1:
+                players.append((Animal(":turtle:", "slow"), ctx.bot.user))
+        return players
+        
+        mode = await self.db.guild(ctx.guild).Mode()
+        users = self.players
+        if mode == 'clashroyale':
+            players = [(CRchars(*random.choice(CRracers)), user) for user in users]
+            if len(players) == 1:
+                players.append((CRchars(*random.choice(CRracers)), ctx.bot.user))
         else:
             players = [(Animal(":turtle:", "slow"), user) for user in users]
             if len(players) == 1:
