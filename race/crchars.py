@@ -3,7 +3,7 @@ import random
 CRracers = (('<:Bandit:666895737916751882>', 'predator')
 
 
-class CRchars:
+class Crchars:
     def __init__(self, emoji, _type):
         self.emoji = emoji
         self._type = _type
