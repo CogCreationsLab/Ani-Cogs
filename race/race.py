@@ -58,6 +58,7 @@ class Race(commands.Cog):
         This command will return silently if a race has already started.
         By not repeatedly telling the user that they can't enter the race, this
         prevents spam.
+        
         """
             if self.started:
                 return await ctx.send("A race has already started.  Please wait for the first one to finish before entering or starting a race.")
@@ -77,6 +78,7 @@ class Race(commands.Cog):
         If you are the only player in the race, you will race against
         your bot.
         The user who started the race is automatically entered into the race.
+        
         """
             if self.active:
                 return await ctx.send("A race is already in progress!  Type `[p]race enter` to enter!")
