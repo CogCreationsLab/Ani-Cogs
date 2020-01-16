@@ -12,7 +12,7 @@ from redbot.core import Config, bank, commands, checks
 import discord
 
 # Race
-from .animals import Animal, crracers
+from .animals import Animal, racers
 
 __author__ = ">_Xzadik"
 __version__ = "2.0.12"
@@ -244,8 +244,8 @@ class Race(commands.Cog):
             Racers are randomly selected from a list of animals with
             different attributes.
         """
-        if mode.lower() not in ('zoo', 'normal', 'clashroyale'):
-            return await ctx.send("Must select either `zoo`, `normal`, or clashroyale as a mode.")
+        if mode.lower() not in ('normal', 'clashroyale'):
+            return await ctx.send("Must select either `normal` or `clashroyale` as a mode.")
 
         await self.db.guild(ctx.guild).Mode.set(mode.lower())
         await ctx.send(f"Mode changed to {mode.lower()}")
