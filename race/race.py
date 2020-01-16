@@ -51,7 +51,7 @@ class Race(commands.Cog):
         """Race related commands."""
         pass
 
-    @commands.command()
+    @race.command()
     async def race(self, ctx):
         if self.active:
             if self.started:
