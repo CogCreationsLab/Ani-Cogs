@@ -1,6 +1,6 @@
 import random
 
-crracers = ((':<:Bandit:666895737916751882>:', 'predator'),
+racers = ((':<:Bandit:666895737916751882>:', 'predator'),
 
 class Animal:
     def __init__(self, emoji, _type):
