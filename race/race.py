@@ -44,7 +44,6 @@ class Race(commands.Cog):
         self.winners = []
         self.players = []
         self.bets = {}
-        data['Players'][author.id] = {}
 
     @commands.group()
     @commands.guild_only()
@@ -58,13 +57,6 @@ class Race(commands.Cog):
         channel = ctx.message.channel
         if channel.name != "race":
             return await ctx.send("You cannot run this command in this channel. Please run this command in #race")
-
-        role_name = "Race"
-        raceRole = discord.utils.get(guild.roles, name=role_name)
-        if raceRole is None:
-            await guild.create_role(guild, name=role_name)
-            raceRole = discord.utils.get(guild.roles, name=role_name)
-  
           
         if self.active:
             if self.started:
@@ -88,8 +80,8 @@ class Race(commands.Cog):
             current = await self.db.guild(ctx.guild).Games_Played()
             await self.db.guild(ctx.guild).Games_Played.set(current + 1)
             await ctx.send(f"🚩 {ctx.author.mention} has started a race!\nType `b!race enter` "
-                        f"to join the race! 🚩\n          The {} will begin in "
-                        f"{wait} seconds!").format(author.mention, ctx.prefix, ' ' * 23, raceRole.mention, wait)
+                        f"to join the race! 🚩\n          The <@667276828142075924> will begin in "
+                        f"{wait} seconds!")
             await asyncio.sleep(wait)
             self.started = True
             await ctx.send("🏁 The race is now in progress. 🏁")
