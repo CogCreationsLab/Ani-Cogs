@@ -44,6 +44,7 @@ class Race(commands.Cog):
         self.winners = []
         self.players = []
         self.bets = {}
+        data['Players'][author.id] = {}
 
     @commands.group()
     @commands.guild_only()
@@ -87,7 +88,7 @@ class Race(commands.Cog):
             current = await self.db.guild(ctx.guild).Games_Played()
             await self.db.guild(ctx.guild).Games_Played.set(current + 1)
             await ctx.send(f"🚩 {ctx.author.mention} has started a race!\nType `b!race enter` "
-                        f"to join the race! 🚩\n          The <@&667276828142075924> will begin in "
+                        f"to join the race! 🚩\n          The {} will begin in "
                         f"{wait} seconds!").format(author.mention, ctx.prefix, ' ' * 23, raceRole.mention, wait))
             await self.bot.edit_role(server, raceRole, mentionable=False)
             await asyncio.sleep(wait)
