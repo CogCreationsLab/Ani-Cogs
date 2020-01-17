@@ -81,27 +81,28 @@ class Race(commands.Cog):
 
         if not self.active:
             if self.active:
-                return await ctx.send("A race is already in progress!  Type `[p]race enter` to enter!")
-            self.active = True
-            self.players.append(ctx.author)
-            wait = await self.db.guild(ctx.guild).Wait()
-            current = await self.db.guild(ctx.guild).Games_Played()
-            await self.db.guild(ctx.guild).Games_Played.set(current + 1)
-            await ctx.send(f"🚩 {ctx.author.mention} has started a race!\nType `b!race enter`")
-                        f"to join the race! 🚩\nThe {} will begin in "
-                        f"{wait} seconds!").format(author.mention, ctx.prefix, ' ' * 23, raceRole.mention, wait)
-            await self.bot.edit_role(guild, raceRole, mentionable=False)
-            await asyncio.sleep(wait)
-            self.started = True
-            await ctx.send("🏁 The race is now in progress. 🏁")
-            await self.run_game(ctx)
+            return await ctx.send("A race is already in progress!  Type `[p]race enter` to enter!")
+        self.active = True
+        self.players.append(ctx.author)
+        wait = await self.db.guild(ctx.guild).Wait()
+        current = await self.db.guild(ctx.guild).Games_Played()
+        await self.db.guild(ctx.guild).Games_Played.set(current + 1)
+        await ctx.send(f"🚩 A race has begun! Type {ctx.prefix}race enter "
+                       f"to join the race! 🚩\nThe race will begin in "
+                       f"{wait} seconds!".format(author.mention, ctx.prefix, ' ' * 23, raceRole.mention, wait)
+        await role.edit(guild, raceRole, mentionable=False)
+        await asyncio.sleep(wait)
+        self.started = True
+        await ctx.send("🏁 The race is now in progress. 🏁")
+        await self.run_game(ctx)
 
-            settings = await self.db.guild(ctx.guild).all()
-            currency = await bank.get_currency_name(ctx.guild)
-            color = await ctx.embed_colour()
-            msg, embed = self._build_end_screen(settings, currency, color)
-            await ctx.send(content=msg, embed=embed)
-            await self._race_teardown(settings)
+        settings = await self.db.guild(ctx.guild).all()
+        currency = await bank.get_currency_name(ctx.guild)
+        color = await ctx.embed_colour()
+        msg, embed = self._build_end_screen(settings, currency, color)
+        await ctx.send(content=msg, embed=embed)
+        await self._race_teardown(settings)
+
 
     @race.command()
     async def stats(self, ctx, user: discord.Member = None):
