@@ -470,8 +470,6 @@ class Race(commands.Cog):
             if len(players) == 1:
                 players.append((Animal(":turtle:", "slow"), ctx.bot.user))
         return players
-        
-        return players
 
     async def run_game(self, ctx):
         players = await self._game_setup(ctx)
