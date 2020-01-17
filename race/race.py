@@ -64,8 +64,7 @@ class Race(commands.Cog):
         if raceRole is None:
             await guild.create_role(guild, name=role_name)
             raceRole = discord.utils.get(guild.roles, name=role_name)
-  
-          
+            
         if self.active:
             if self.started:
                 return await ctx.send("A race has already started.  Please wait for the first one to finish before entering or starting a race.")
@@ -90,7 +89,7 @@ class Race(commands.Cog):
         
         await ctx.send(f"🚩 A race has begun! Type {ctx.prefix}race enter "
                        f"to join the race! 🚩\nThe race will begin in "
-                       f"{wait} seconds!".format(author.mention, ctx.prefix, ' ' * 23, raceRole.mention, wait)
+                       f"{wait} seconds!".format(author.mention, ctx.prefix, ' ' * 23, raceRole.mention)
         
         await asyncio.sleep(wait)
         self.started = True
