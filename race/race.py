@@ -58,6 +58,13 @@ class Race(commands.Cog):
         if channel.name != "race":
             return await ctx.send("You cannot run this command in this channel. Please run this command in #race")
 
+        role_name = "Race"
+        raceRole = discord.utils.get(guild.roles, name=role_name)
+        if raceRole is None:
+            await guild.create_role(guild, name=role_name)
+            raceRole = discord.utils.get(guild.roles, name=role_name)
+  
+          
         if self.active:
             if self.started:
                 return await ctx.send("A race has already started.  Please wait for the first one to finish before entering or starting a race.")
@@ -81,7 +88,8 @@ class Race(commands.Cog):
             await self.db.guild(ctx.guild).Games_Played.set(current + 1)
             await ctx.send(f"🚩 {ctx.author.mention} has started a race!\nType `b!race enter` "
                         f"to join the race! 🚩\n          The <@&667276828142075924> will begin in "
-                        f"{wait} seconds!")
+                        f"{wait} seconds!").format(author.mention, ctx.prefix, ' ' * 23, raceRole.mention, wait))
+            await self.bot.edit_role(server, raceRole, mentionable=False)
             await asyncio.sleep(wait)
             self.started = True
             await ctx.send("🏁 The race is now in progress. 🏁")
