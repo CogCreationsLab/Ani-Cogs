@@ -81,7 +81,7 @@ class Race(commands.Cog):
 
         if not self.active:
             if self.active:
-            return await ctx.send("A race is already in progress!  Type `[p]race enter` to enter!")
+              return await ctx.send("A race is already in progress!  Type `[p]race enter` to enter!")
         self.active = True
         self.players.append(ctx.author)
         wait = await self.db.guild(ctx.guild).Wait()
