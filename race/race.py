@@ -12,7 +12,7 @@ from redbot.core import Config, bank, commands, checks
 import discord
 
 # Race
-from .animals import Animal, racers, crracers
+from .animals import Animal, racers
 
 __author__ = ">_Xzadik"
 __version__ = "2.0.12"
