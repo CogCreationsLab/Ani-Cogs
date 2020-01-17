@@ -455,12 +455,7 @@ class Race(commands.Cog):
             players = [(Animal(*random.choice(racers)), user) for user in users]
             if len(players) == 1:
                 players.append((Animal(*random.choice(racers)), ctx.bot.user))
-        else:
-            players = [(Animal(":turtle:", "slow"), user) for user in users]
-            if len(players) == 1:
-                players.append((Animal(":turtle:", "slow"), ctx.bot.user))
-        return players
-                       
+        
         if mode == 'clashroyale':
             players = [(Animal(*random.choice(crracers)), user) for user in users]
             if len(players) == 1:
