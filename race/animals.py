@@ -12,7 +12,7 @@ racers = ((':rabbit2:', 'fast'), (':monkey:', 'fast'), (':cat2:', 'fast'), (':mo
           (':turkey:', 'slow'), (':duck:', 'slow'), (':baby_chick:', 'slow'))
 
 crracers = (('<:Bandit:666895737916751882>'), 'predator'),
-            ('<:MegaKnight:667286836187496469>'), 'predator'),
+           ('<:MegaKnight:667286836187496469>'), 'predator'),
             ('BattleRam'), 'predator'),
             ('IceSpirit'), 'fast'),
             ('FireSpirits'), 'fast'),
