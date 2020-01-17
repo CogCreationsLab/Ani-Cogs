@@ -14,7 +14,6 @@ racers = ((':rabbit2:', 'fast'), (':monkey:', 'fast'), (':cat2:', 'fast'), (':mo
 crracers = (('<:Bandit:666895737916751882> ', 'predator'), ('<:MegaKnight:667286836187496469> ', 'predator'),
             ('<:BattleRam:667661938553126929>', 'predator')
 
-
 class Animal:
     def __init__(self, emoji, _type):
         self.emoji = emoji
