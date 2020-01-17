@@ -79,7 +79,6 @@ class Race(commands.Cog):
             wait = await self.db.guild(ctx.guild).Wait()
             current = await self.db.guild(ctx.guild).Games_Played()
             await self.db.guild(ctx.guild).Games_Played.set(current + 1)
-            await RaceRole.edit(mentionable=True)
             await ctx.send(f"🚩 {ctx.author.mention} has started a race!\nType `b!race enter` "
                         f"to join the race! 🚩\n          The <@&667276828142075924> will begin in "
                         f"{wait} seconds!")
