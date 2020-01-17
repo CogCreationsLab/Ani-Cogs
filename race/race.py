@@ -243,9 +243,13 @@ class Race(commands.Cog):
         Zoo Mode:
             Racers are randomly selected from a list of animals with
             different attributes.
+            
+        Clash Royale Mode:
+            Racers are randomly selected from a list of Clash Royale Characters with
+            different attributes.
         """
-        if mode.lower() not in ('normal', 'clashroyale'):
-            return await ctx.send("Must select either `normal` or `clashroyale` as a mode.")
+        if mode.lower() not in ('normal', 'zoo', 'clashroyale'):
+            return await ctx.send("Must select either `normal`, `zoo` or `clashroyale` as a mode.")
 
         await self.db.guild(ctx.guild).Mode.set(mode.lower())
         await ctx.send(f"Mode changed to {mode.lower()}")
@@ -447,14 +451,24 @@ class Race(commands.Cog):
     async def _game_setup(self, ctx):
         mode = await self.db.guild(ctx.guild).Mode()
         users = self.players
-        if mode == 'clashroyale':
+        if mode == 'zoo':
             players = [(Animal(*random.choice(racers)), user) for user in users]
             if len(players) == 1:
-                players.append((Animal(*random.choice(racers)), ctx.bot.user))           
+                players.append((Animal(*random.choice(racers)), ctx.bot.user))
         else:
-            players = [(Animal(":Knight:", "slow"), user) for user in users]
+            players = [(Animal(":turtle:", "slow"), user) for user in users]
             if len(players) == 1:
-                players.append((Animal(":knight:", "slow"), ctx.bot.user))
+                players.append((Animal(":turtle:", "slow"), ctx.bot.user))
+        return players
+                       
+        if mode == 'clashroyale':
+            players = [(Animal(*random.choice(crracers)), user) for user in users]
+            if len(players) == 1:
+                players.append((Animal(*random.choice(crracers)), ctx.bot.user))
+        else:
+            players = [(Animal(":turtle:", "slow"), user) for user in users]
+            if len(players) == 1:
+                players.append((Animal(":turtle:", "slow"), ctx.bot.user))
         return players
         
         return players
