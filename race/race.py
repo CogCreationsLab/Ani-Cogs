@@ -87,7 +87,7 @@ class Race(commands.Cog):
             await RaceRole.edit(mentionable=True)
             await ctx.send(f"🚩 {ctx.author.mention} has started a race!\nType `b!race enter` "
                         f"to join the race! 🚩\n          The <@&667276828142075924> will begin in "
-                        f"{wait} seconds!".format(author.mention, ctx.prefix, ' ' * 23, raceRole.mention, wait)
+                        f"{wait} seconds!".format(author.mention, ctx.prefix, ' ' * 23, raceRole.mention, wait))
             
             await asyncio.sleep(wait)
             self.started = True
