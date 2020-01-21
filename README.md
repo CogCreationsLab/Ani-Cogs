@@ -20,7 +20,7 @@ To install a cog on your bot instance:
 
 ### 1. Add the repo
 
-`[p]cog repo add Ani-Cogs https://github.com/CogCreationsLab/Ani-Cog`
+`[p]repo add Ani-Cogs https://github.com/CogCreationsLab/Ani-Cog`
 
 ### 2. Add the cog you want to install
 
