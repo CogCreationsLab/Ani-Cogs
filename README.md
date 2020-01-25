@@ -5,7 +5,7 @@
 
 Made with Python and [RED](https://github.com/Cog-Creators/Red-DiscordBot).
 
-If you want to see this bot in action, join Anime Cafe Discord at [animecafe.com/discord]()Disabled
+If you want to see this bot in action, join Anime Cafe Discord at [animecafe.com/discord]() Disabled
 
 
 ## Cogs
