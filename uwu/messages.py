@@ -68,11 +68,16 @@ self_kill_msg = [
 ]
 
 kiss_msg = [
-    "{auth} kissed {mem}! Oh my...",
+    "{auth} kissed {mem}! mmm'wah!!",
+    "{auth} kisses {mem}!! UwU",
+    "{auth} kisses {mem}'s lips~",
+    "{auth} kissed {mem}! Cute!",
 ]
     
 self_kiss_msg = [
-    "Lets... not do that, {auth}..."
+    "H-how do you kiss yourself, {auth}?",
+    "... There there {auth}...",
+    "I'll kiss you instead, {auth} ;c"
 ]
 
 #################        
