@@ -113,6 +113,23 @@ kill_gif = [
 
 kiss_gif = [
     "https://i.imgur.com/t3rdifu.gif",
+    "https://i.imgur.com/VYtlhxE.gif",
+    "https://i.imgur.com/8tOtV4c.gif",
+    "https://i.imgur.com/P4fVdtx.gif",
+    "https://i.imgur.com/38zGeMq.gif",
+    "https://i.imgur.com/Dqrfp8U.gif",
+    "https://i.imgur.com/cuaHIjR.gif",
+    "https://i.imgur.com/FGD6ez5.gif",
+    "https://i.imgur.com/NxlIoxQ.gif",
+    "https://i.imgur.com/TLUtuRZ.gif",
+    "https://i.imgur.com/Pumyi1B.gif",
+    "https://i.imgur.com/Flxcxhg.gif",
+    "https://i.imgur.com/PeKis1Y.gif",
+    "https://i.imgur.com/PQZVh8G.gif",
+    "https://i.imgur.com/5TIikp3.gif",
+    "https://i.imgur.com/IFkoXzx.gif",
+    "https://i.imgur.com/OtUsQMf.gif",
+    "https://i.imgur.com/HdcVKXL.gif"
 ]
 
 #################        
