@@ -233,3 +233,30 @@ class uwu(commands.Cog):
         
         await ctx.send(embed=happybed)
         
+
+################        
+#Commands To Add#
+################
+# -Smile
+# -Pat -Done
+# -Poke
+# -Kiss -Done
+# -Lick
+# -Kill
+# -Punch
+# -Happy -Done
+# -Excited -Done
+# -Cuddle -Done
+# -Insult
+# -Nom
+# -Slap -Done
+# -Stare
+# -Highfive
+# -Bite
+# -Handholding
+# -Tickle
+# -Kill
+# -Hold
+# -Wave -Done
+# -Boop
+# -Bully
